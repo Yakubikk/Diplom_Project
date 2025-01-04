@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "Привет мир!",
+    "about": "Перейти на страницу about"
+  },
+  "LocaleSwitcher": {
+    "label": "Сменить язык",
+    "locale": "{locale, select, ru {\uD83C\uDDF7\uD83C\uDDFA Русский} en {🇺🇸 English} other {Unknown}}"
+  }
+}
