@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.gifer.com',
+        protocol: "https",
+        hostname: "**",
       },
     ],
   },

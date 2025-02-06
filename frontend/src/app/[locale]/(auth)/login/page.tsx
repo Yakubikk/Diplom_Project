@@ -37,6 +37,7 @@ export default function Login() {
         email: email,
         role: 'teacher',
         createdAt: new Date().toISOString(),
+        avatarUrl: 'https://i.gifer.com/PE61.gif',
       }
 
       login(user, rememberMe);

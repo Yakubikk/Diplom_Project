@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react";
-import "../globals.css";
 import {Header, Loading, Sidebar} from "@/components";
 import {useAuth} from "@/context/AuthContext";
 
@@ -12,6 +11,7 @@ export default function MainLayout(
         children: React.ReactNode;
     }>) {
     const { user } = useAuth();
+
     if (!user) return <div className='w-full h-screen flex items-center justify-center'><Loading /></div>;
 
     return (

@@ -13,9 +13,9 @@ const Sidebar: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(() => {
         if (typeof window !== "undefined") {
             const savedIsOpen = sessionStorage.getItem('sidebarIsOpen');
-            if (savedIsOpen === 'true') return true;
+            if (savedIsOpen === 'false') return false;
         }
-        return false;
+        return true;
     });
 
     useEffect(() => {
@@ -34,12 +34,10 @@ const Sidebar: React.FC = () => {
             }`}
         >
             <div className='flex gap-3 pl-2 items-center min-h-16 border-b border-gray-300'>
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className='min-w-12 h-12 rounded-full p-2 hover:bg-gray-100 hover:cursor-pointer flex items-center justify-center'
-                >
-                    <IconMenu2 />
+                <button className="button min-w-12 h-12 rounded-full p-3" onClick={() => setIsOpen(!isOpen)}>
+                    <IconMenu2/>
                 </button>
+
                 <Link
                     href='/'
                     className={`flex gap-2 items-center text-xl font-semibold hover:underline underline-offset-2 overflow-hidden transition-all duration-300 ${
@@ -51,7 +49,7 @@ const Sidebar: React.FC = () => {
                 </Link>
             </div>
 
-            <div className='w-full h-full py-4 pr-3 flex flex-col border-r border-gray-300'>
+            <div className='w-full h-full py-3 pr-3 flex flex-col border-r border-gray-300'>
                 {links.map((link, i) => (
                     <Link
                         key={i}

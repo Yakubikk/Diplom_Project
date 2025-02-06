@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import "../globals.css";
 
 export const metadata: Metadata = {
   title: "MyPSU - authentication",
@@ -14,10 +13,8 @@ export default async function AuthLayout(
     children: React.ReactNode;
   }>) {
   return (
-    <div className="flex h-screen">
-      <div className="flex w-full h-full items-center justify-center">
+    <div className="flex w-full h-screen items-center justify-center">
         {children}
-      </div>
     </div>
   );
 }

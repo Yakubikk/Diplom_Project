@@ -9,8 +9,65 @@
   "Class": {
     "navbar": {
       "feed": "Feed",
-      "tasks": "Tasks",
+      "tasks": "Assignments",
       "users": "Users"
+    },
+    "subject": "Subject",
+    "meet": "Meet",
+    "join": "Join",
+    "copyLink": "Copy link",
+    "upcoming": "Upcoming",
+    "noUpcoming": "You don't have any assignments due next week.",
+    "viewAll": "View all"
+  },
+  "TextEditor": {
+    "refer": "Refer to the course",
+    "cancel": "Cancel",
+    "publish": "Publish",
+    "bold": "Bold",
+    "italics": "Italics",
+    "underlined": "Underlined",
+    "list": "Bulleted list",
+    "clearFormatting": "Clear formatting",
+    "youtube": "Add video from YouTube",
+    "file": "Upload file",
+    "link": "Add link",
+    "modals": {
+      "youtube": {
+        "enter": "Enter a search query or URL",
+        "add": "Add",
+        "cancel": "Cancel",
+        "views": {
+          "one": "{count} view",
+          "few": "{count} views",
+          "many": "{count} views"
+        },
+        "likes": {
+          "one": "{count} like",
+          "few": "{count} likes",
+          "many": "{count} likes"
+        }
+      }
+    }
+  },
+  "Header": {
+    "account": {
+      "hello": "Hello",
+      "accountManagement": "Account Management"
+    },
+    "calendar": {
+      "today": "Today"
+    },
+    "join": {
+      "join": "Join",
+      "logged": "You are logged in to account",
+      "changeAccount": "Change account",
+      "courseCode": "Course code",
+      "enterCode": "Enter the course code (you can get it from your teacher).",
+      "howToLogin": "How to login with a course code",
+      "useWithAccess": "Use an account with access rights.",
+      "enterCodeHow": "Enter the course code, which consists of 5-7 letters or numbers. It should not contain spaces or special characters.",
+      "cancel": "Cancel"
     }
   },
   "Sidebar": {

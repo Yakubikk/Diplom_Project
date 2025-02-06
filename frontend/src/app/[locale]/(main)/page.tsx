@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { Classroom } from "@/models/classroom/classroom";
-import { ClassCard } from "@/components";
+import {ClassCard, Loading} from "@/components";
 import { useBreadcrumbs } from "@/context/BreadcrumbContext";
 
 export default function Home() {
     const allClasses: Classroom[] = [
-        { id: '121212', title: 'Математика', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
+        { id: '121212', title: 'СПП (21-ИТ) 23/24/25', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
         { id: '1212121', title: 'Физика', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
         { id: '1212122', title: 'Пастухов', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
         { id: '1212123', title: 'Веб', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
@@ -15,6 +15,7 @@ export default function Home() {
         { id: '1212125', title: 'СПП', description: 'dfsadasdsa sad sad', teacherId: 'q3231233', createdAt: new Date() },
     ];
 
+    //Добавить обработку нового класса
     const [classes, setClasses] = useState<Classroom[]>(() => {
         if (typeof window !== "undefined") {
             const savedClassIds = localStorage.getItem("classIds");
@@ -47,7 +48,7 @@ export default function Home() {
 
         const element = e.currentTarget;
         element.style.opacity = "0.8";
-        element.style.background = "gray";
+        element.style.background = "#e5e7eb";
     };
 
     const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
@@ -78,6 +79,8 @@ export default function Home() {
 
         setClasses(newClasses);
     };
+
+    if (!classes) return <Loading />;
 
     return (
         <div className='h-full w-full grid p-4 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2'>

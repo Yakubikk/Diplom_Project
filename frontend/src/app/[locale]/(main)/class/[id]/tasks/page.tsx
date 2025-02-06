@@ -14,16 +14,13 @@ export default function ClassTasksPage() {
     useEffect(() => {
         if (id) {
             setBreadcrumbs([
-                {name: id, href: `/class/${id}`},
+                {name: 'СПП (21-ИТ) 23/24/25', href: `/class/${id}`},
                 {name: t('navbar.tasks'), href: `/class/${id}/tasks`},
             ]);
         }
     }, [id, setBreadcrumbs, t]);
 
     return (
-        <div>
-            <h1>Classroom ID: {id}</h1>
-
-        </div>
+        <div className="w-full h-full bg-cyan-100" />
     );
 }

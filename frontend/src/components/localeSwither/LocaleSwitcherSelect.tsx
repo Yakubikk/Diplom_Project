@@ -37,7 +37,7 @@ export default function LocaleSwitcherSelect(
   return (
     <label className='relative'>
       <select
-        className="inline-flex appearance-none bg-gray-200 disabled:bg-gray-200 pr-8 pl-2 py-2 rounded-md hover:cursor-pointer"
+        className="inline-flex appearance-none pr-8 pl-2 py-2 rounded hover:cursor-pointer border border-gray-300 bg-transparent"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}

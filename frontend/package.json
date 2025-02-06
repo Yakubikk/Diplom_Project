@@ -10,12 +10,18 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.26.0",
+    "@tiptap/extension-underline": "^2.11.5",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
     "axios": "^1.7.9",
+    "framer-motion": "^12.1.0",
     "next": "15.1.3",
     "next-intl": "^3.26.3",
-    "nookies": "^2.5.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-datepicker": "^8.0.0",
+    "react-dom": "^19.0.0",
+    "react-player": "^2.16.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
