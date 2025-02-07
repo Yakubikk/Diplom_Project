@@ -101,6 +101,7 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
         <div className="flex flex-col border-b pb-1 rounded-t bg-gray-100 hover:bg-gray-200 hover:bg-opacity-55 border-gray-500">
             <div className="p-4">
                 <EditorContent editor={editor}/>
+                {value}
             </div>
 
             <div className="flex flex-wrap px-2">

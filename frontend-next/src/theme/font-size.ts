@@ -1,0 +1,25 @@
+import { type ThemeConfig } from 'tailwindcss/types/config';
+
+export const fontSize: ThemeConfig['fontSize'] = {
+  h1Large: 'var(--large-h1-font-size)',
+  h2Large: 'var(--large-h2-font-size)',
+  h3Large: 'var(--large-h3-font-size)',
+  h1Title: 'var(--title-h1-font-size)',
+  h2Title: 'var(--title-h2-font-size)',
+  h3Title: 'var(--title-h3-font-size)',
+  h1Subtitle: 'var(--subtitle-h1-font-size)',
+  h2Subtitle: 'var(--subtitle-h2-font-size)',
+  buttonLarge: 'var(--button-large-font-size)',
+  buttonSmall: 'var(--button-small-font-size)',
+  bodyLarge: 'var(--body-large-font-size)',
+  bodyLargeBold: 'var(--body-large-font-size)',
+  bodyMedium: 'var(--body-medium-font-size)',
+  bodyMediumBold: 'var(--body-medium-bold-font-size)',
+  bodySmall: 'var(--body-small-font-size)',
+  bodySmallSemibold: 'var(--body-small-semibold-font-size)',
+  bodySmallBold: 'var(--body-small-bold-font-size)',
+  overlineLarge: 'var(--overline-large-font-size)',
+  overlineSmall: 'var(--overline-small-font-size)',
+  tag: 'var(--tag-font-size)',
+  mobil: 'var(--mobil-font-size)',
+};

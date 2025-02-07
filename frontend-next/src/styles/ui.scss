@@ -1,0 +1,156 @@
+@use "sass:meta";
+@tailwind base;
+@tailwind components;
+@include meta.load-css('components.scss');
+@tailwind utilities;
+@include meta.load-css('utilities.scss');
+@include meta.load-css('fonts.scss');
+
+@layer base {
+  :root {
+    /* Fonts */
+    --font-sans: manrope, roboto;
+    --font-mono: '';
+    --font-serif: '';
+
+    /* Typography */
+    --font-size-base: 16; /* fonts size html base 16px/1rem */
+    --large-h1-font-size: 3.75rem; /* 60px */
+    --large-h1-line-height: calc(70 / 60); /* 70px */
+    --large-h2-font-size: 3.5rem; /* 56px */
+    --large-h2-line-height: calc(70 / 56); /* 70px */
+    --large-h3-font-size: 2.75rem; /* 44px */
+    --large-h3-line-height: calc(60 / 44); /* 60px */
+    --title-h1-font-size: 2rem; /* 32px */
+    --title-h1-line-height: calc(44 / 32); /* 44px */
+    --title-h2-font-size: 1.75rem; /* 28px */
+    --title-h2-line-height: calc(38 / 28); /* 38px */
+    --title-h3-font-size: 1.5rem; /* 24px */
+    --title-h3-line-height: calc(33 / 24); /* 33px */
+    --subtitle-h1-font-size: 1.5rem; /* 24px */
+    --subtitle-h1-line-height: calc(36 / 24); /* 36px */
+    --subtitle-h2-font-size: 1.25rem; /* 20px */
+    --subtitle-h2-line-height: calc(32 / 20); /* 32px */
+    --button-large-font-size: 1.125rem; /* 18px */
+    --button-large-line-height: calc(25 / 18); /* 25px */
+    --button-small-font-size: 1rem; /* 16px */
+    --button-small-line-height: calc(24 / 16); /* 24px */
+    --body-large-font-size: 1.125rem; /* 18px */
+    --body-large-line-height: calc(28 / 18); /* 28px */
+    --body-large-bold-font-size: 1.125rem; /* 18px */
+    --body-large-bold-line-height: calc(25 / 18); /* 25px */
+    --body-medium-font-size: 1rem; /* 16px */
+    --body-medium-line-height: calc(24 / 16); /* 24px */
+    --body-medium-semibold-font-size: 1rem; /* 16px */
+    --body-medium-semibold-line-height: calc(22 / 16); /* 22px */
+    --body-medium-bold-font-size: 1rem; /* 16px */
+    --body-medium-bold-line-height: calc(24 / 16); /* 24px */
+    --body-small-font-size: 0.9375rem; /* 15px */
+    --body-small-line-height: calc(24 / 15); /* 24px */
+    --body-small-semibold-font-size: 0.9375rem; /* 15px */
+    --body-small-semibold-line-height: calc(24 / 15); /* 24px */
+    --body-small-bold-font-size: 0.9375rem; /* 15px */
+    --body-small-bold-line-height: calc(20 / 15); /* 20px */
+    --overline-large-font-size: 0.9375rem; /* 15px */
+    --overline-large-line-height: calc(24 / 15); /* 24px */
+    --overline-large-letter-spacing: calc(
+      0.8 / var(--font-size-base) * 1rem
+    ); /* 5% */
+
+    --overline-small-font-size: 0.875rem; /* 14px */
+    --overline-small-line-height: calc(24 / 14); /* 24px */
+    --overline-small-letter-spacing: calc(
+      0.36 / var(--font-size-base) * 1rem
+    ); /* 3% | 0.36px */
+
+    --tag-font-size: 0.875rem; /* 14px */
+    --tag-line-height: calc(24 / 14); /* 24px */
+    --mobil-font-size: 0.8125rem; /* 13px */
+    --mobil-line-height: calc(14 / 13); /* 14px */
+    --overline-none-letter-spacing: 0;
+
+    /* Colors */
+
+    /* Core */
+    --primary: 220, 90%, 55%; /* Dodger Blue #266CF4 #256af4 */
+    --secondary: 0, 0%, 7%; /* Dark #131313 */
+    --disabled: 219, 68%, 82%; /* Light Blue #B0C6F0 */
+    --error: 0, 100%, 41%; /* Red #D00000 */
+    --white: 0, 0%, 100%; /* White #FFFFFF */
+    --black: 0, 0%, 0%; /* Black #000000 */
+    --light-grey: 220, 14%, 79%; /* Light Grey #C2C7D1 */
+    --grey: 219, 27%, 88%; /* Light Grey #D7DDE8 */
+    --blue: 220, 80%, 42%; /* Science Blue #0055F3 */
+    --dark-blue: 220, 63%, 29%; /* Dark Blue #1B3A78 */
+
+    /* Buttons */
+    --button-primary: var(--primary); /* Dodger Blue #3B79FF */
+    --button-primary-active: var(--dark-blue); /* Dark Blue #1B3A78 */
+    --button-primary-hover: var(--blue); /* Science Blue #0055F3 */
+    --button-secondary: var(--secondary); /* Dark #131313 */
+    --button-secondary-text: var(--grey); /* Light Grey #D7DDE8 */
+
+    /* Divider and border */
+    --divider-primary: var(--grey); /* Light Grey #D7DDE8 */
+    --divider-secondary: var(--disabled); /* Light Blue #B0C6F0 */
+    --divider-light: 220, 14%, 79%; /* Light Grey #C2C7D1 */
+    --divider-grey: var(--light-grey); /* Dark Grey #333740 */
+    --divider-dark: var(--secondary); /* Dark #131313 */
+
+    /* Background */
+    --background-primary: var(--white); /* White #FFFFFF */
+    --background-card: 215, 100%, 98%; /* Light Blue #F3F8FF */
+    --background-icon: 220, 100%, 96%; /* Light Blue #EAF1FF */
+    --background-dark: var(--secondary); /* Dark #131313 */
+
+    /* Text */
+    --text-primary: var(--primary); /* Dodger Blue #3B79FF */
+    --text-secondary: var(--secondary); /* Dark #131313 */
+    --text-breadcrumbs: var(--light-grey); /* Light Grey #C2C7D1 */
+    --text-buttons-hover: 218, 7%, 30%; /* Grey #484C53 */
+    --text-buttons-active: var(--dark-blue); /* Dark Blue #1B3A78 */
+    --text-inputs: 222, 11%, 23%; /* Dark Grey #333740 */
+    --text-hover: var(--blue); /* Science Blue #0055F3 */
+    --text-white: var(--white); /* White #FFFFFF */
+
+    /* Icons */
+    --icon-primary: var(--primary); /* Dodger Blue #3B79FF */
+    --icon-white: var(--white); /* White #FFFFFF */
+    --icon-light: var(--light-grey); /* Light Grey #C2C7D1 */
+    --icon-blue: var(--blue); /* Science Blue #0055F3 */
+    --icon-secondary: var(--secondary); /* Dark #131313 */
+    --icon-dark: var(--dark-blue); /* Dark Blue #1B3A78 */
+    --icon-grey: var(--grey); /* Light Grey #D7DDE8 */
+    --icon-disabled: var(--disabled); /* Light Blue #B0C6F0 */
+
+    /* Border radius */
+    --border-radius-md: calc(
+      20 / var(--font-size-base) * 1rem
+    ); /* 1.25rem (20px) */
+
+    --border-radius-lg: calc(
+      24 / var(--font-size-base) * 1rem
+    ); /* 1.5rem (24px) */
+
+    --border-radius-xl: calc(
+      50 / var(--font-size-base) * 1rem
+    ); /* 3.125rem (50px) */
+
+    /* Box shadow */
+    --box-shadow-button: 0 0 20px 0 hsl(220deg 90% 55% / 20%);
+  }
+
+  html {
+    font-size: calc(var(--font-size-base) * 1px);
+  }
+
+  body {
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  input:-webkit-autofill {
+    box-shadow: inset 0 0 0 50px white; /* цвет вашего фона */
+  }
+}

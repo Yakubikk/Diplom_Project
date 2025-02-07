@@ -1,0 +1,155 @@
+{
+  "HomePage": {
+    "bannerText": "Effective IT solutions\nfor your business",
+    "bannerButtonText": "Discuss project",
+    "services": "Services",
+    "serviceDescription": "Our team is ready to support your enterprise's digital transformation and product development needs",
+    "solutions": "Solutions",
+    "solutionsDescription": "We provide solutions tailored to your needs in areas where we have proven expertise",
+    "promoText": "Have a project in mind?\nLet's work together",
+    "promoButtonText": "Discuss Project",
+    "cases": "Сase Studies",
+    "casesDescription": "We have successfully completed a wide range of IT projects in different industries.  Here you can explore a selection of them",
+    "blog": "Blog",
+    "blogDescription": "Follow our blog to be first to learn about news, events, useful information and completed projects are waiting for you",
+    "contact": "Have a project in mind?\nLet's work together",
+    "contactDescription": "Please contact us, tell us about your project and we will respond shortly"
+  },
+  "BlogPage": {
+    "subheaderOne": "Latest",
+    "subheaderTwo": "Blog",
+    "subheaderThree": "You may also like ",
+    "buttonText": "Load more",
+    "tagOne": "All articles",
+    "contentTitle": "Contents:"
+  },
+  "AboutUsPage": {
+    "title": "About us",
+    "subtitle": "We resolve complex issues your business faces",
+    "description": "Vebtech is a technology-driven IT company which specializes in custom software development, AI-driven solutions, web and mobile products.\n\nWe provide digital solutions to businesses across various sectors, helping them streamline operations, modernize infrastructure, and implement the latest technology trends.",
+    "infoTitle": "Our goal",
+    "infoDescription": "We see our goal in developing innovative, reliable IT solutions that help businesses in their digital transformation journey.\n\nFor us, it's not just about the technology, but the people behind it. We encourage teamwork, creativity, and constant learning. By working closely with our clients, we build practical solutions that have a real impact and help businesses grow and innovate.",
+    "infoTitleTwo": "Why us?",
+    "infoTitleThree": "Our office",
+    "infoTitleFour": "Life at Vebtech",
+    "infoDescriptionTwo": "We are you reliable partner in the world of IT\nVEB Technologies LLC teams specialize in developing software products and delivering fintech IT services\n\nWe started our journey as an independent company back in 2018, and are proud to be a resident of the High Technology Park, the biggest IT hub in Eastern Europe",
+    "advantageOneTitle": "250+",
+    "advantageTwoTitle": "25+ Years of experience",
+    "advantageThreeTitle": "15",
+    "advantageFourTitle": "130+",
+    "advantageOne": "IT Professionals",
+    "advantageTwo": "in creating IT services for banks and other financial organizations",
+    "advantageThree": "Competence centers",
+    "advantageFour": "Сertificates in IT",
+    "cardTitleOne": "Full cycle development",
+    "cardDescriptionOne": "We manage the entire web development process, from the design concepts and prototyping to coding and continuous support",
+    "cardTitleTwo": "Efficiency",
+    "cardDescriptionTwo": "We have built efficient processes for delivering software development services. Our gained experience allows us to  educe the goal-achieving time to the minimum.",
+    "cardTitleThree": "Flexibility",
+    "cardDescriptionThree": "Easily adjust team size and resources to fit evolving project requirements.",
+    "accordion": "Our History",
+    "city": "Minsk",
+    "address": "220073, Skryganova st., 6, kom. 601\nBelarus",
+    "map": "SEE ON GOOGLE MAPS"
+  },
+  "Header": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "caseStudies": "Case studies",
+    "blog": "Blog",
+    "aboutUs": "About us",
+    "contactUs": "CONTACT US"
+  },
+  "Footer": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "caseStudies": "Case studies",
+    "blog": "Blog",
+    "aboutUs": "About us",
+    "contacts": "Contacts",
+    "rights": "© 2025 VEB Technologies LLC - IT solutions for business. All rights reserved."
+  },
+  "CaseStudiesPage": {
+    "contactUsTitle": "Are you ready to start a project?",
+    "contactUsText": "Please contact us, tell us about your project and we will respond shortly",
+    "contactUsButtonText": "CONTACT US"
+  },
+  "Components": {
+    "mailForm": {
+      "title": "Are you ready to start a project?",
+      "description": "Get monthly updates on the case studies, technology insights and tips right in your mailbox",
+      "btnText": "Submit"
+    },
+    "localeSwitcher": {
+      "toggle": "Toggle"
+    }
+  },
+  "ServicesPage": {
+    "title": "Are you ready to start a project?",
+    "description": "Please contact us, tell us about your project and we will\nrespond shortly",
+    "btnText": "Request consultation",
+    "contactTitle": "Let’s discuss your  project and ideas!",
+    "contactDescription": "Please contact us, tell us about your project and we will\nrespond shortly",
+    "contactBtnText": "CONTACT US",
+    "headerTitle": "Services we provide",
+    "headerDescription": "Vebtech manages the entire software development process, from initial idea discussions to design and ongoing improvements. We are ready to help you at any stage of the project.",
+    "more": "More",
+    "offer": "What we offer as a service",
+    "stack": "Technology stack"
+  },
+  "ContactUsForm": {
+    "fullNamePlaceholder": "Full Name*",
+    "emailPlaceholder": "E-mail address*",
+    "phonePlaceholder": "Phone number*",
+    "helpPlaceholder": "How can we help you?",
+    "agreeText": "Sending the form",
+    "agreeLinkText": "I agree with\n",
+    "agreeContinuation": "processing rules personal data",
+    "sendButton": "SEND",
+    "requiredFieldError": "Required field",
+    "invalidEmailError": "Not valid email",
+    "invalidPhoneError": "Not valid phone number"
+  },
+  "BlogMainComponent": {
+    "viewAll": "View all"
+  },
+  "CasesContentComponent": {
+    "title": "Explore our portfolio of clients success cases",
+    "mobileTitle": "Case studies",
+    "nothingFoundTitle": "Nothing was found",
+    "nothingFoundDescription": "Unfortunately, there are no suitable results with these filters. Reset the filters\n to start the search again."
+  },
+  "MailForm": {
+    "title": "Subscribe to our Newsletter",
+    "description": "Stay updated with our latest news and offers.",
+    "fullNamePlaceholder": "Full Name *",
+    "emailPlaceholder": "Email *",
+    "requiredFieldError": "Required field",
+    "agreeText": "Sending the form",
+    "agreeLinkText": "I agree with",
+    "agreeContinuation": "processing rules personal data",
+    "subscribeButton": "Subscribe",
+    "invalidEmailError": "Not valid email"
+  },
+  "CaseStudiesComponent": {
+    "title": "Case Studies",
+    "description": "We have successfully completed a wide range of IT projects in different industries. Here you can explore a selection of them",
+    "allCasesButton": "All cases"
+  },
+  "CaseContentComponent": {
+    "clientTitle": "Client",
+    "duration": "DURATION",
+    "techStackTitle": "TECHNOLOGY STACK",
+    "numbersNote": "* Numbers steadily growing",
+    "caseStudiesTitle": "Case Studies"
+  },
+  "Filter": {
+    "buttonOne": "Show more +",
+    "buttonTwo": "Reset filter"
+  },
+  "Common": {
+    "viewAll": "View all",
+    "details": "DETAILS",
+    "contact": "Contact us"
+  }
+}

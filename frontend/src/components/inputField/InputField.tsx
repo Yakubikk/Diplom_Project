@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
