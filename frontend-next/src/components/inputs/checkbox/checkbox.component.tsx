@@ -22,7 +22,7 @@ export type CheckboxProps = {
 >;
 
 const Checkbox = React.forwardRef<
-  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  HTMLButtonElement,
   CheckboxProps
 >(
   (
@@ -31,7 +31,6 @@ const Checkbox = React.forwardRef<
       className,
       disabled,
       id,
-      onChange,
       label,
       indeterminate,
       size = 'md',
@@ -53,20 +52,20 @@ const Checkbox = React.forwardRef<
       <LabelRadix.Root
         className={cn(
           'inline-flex select-none items-center gap-[11px] outline-none',
-          disabled && 'text-textSecondary/45 pointer-events-none',
+          disabled && 'text-black/45 pointer-events-none',
           size === 'sm' && 'text-body2 leading-body3'
         )}
       >
         <CheckboxPrimitive.Root
           className={cn(
             'mt-[3px] self-start',
-            'rounded-xs box-content size-6 shrink-0 border border-divider-secondary outline-none transition',
-            'focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-            'data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=unchecked]:bg-transparent',
-            'hover:border-primary hover:data-[state=checked]:border-secondary hover:data-[state=checked]:bg-secondary',
-            'flex items-center justify-center self-center rounded-[8px] disabled:data-[state=checked]:border-divider-secondary disabled:data-[state=checked]:bg-divider-primary/40',
+            'rounded-xs box-content size-6 shrink-0 border border-gray-300 outline-none transition',
+            'focus-visible:border-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+            'data-[state=checked]:border-blue-500 data-[state=checked]:bg-blue-500 data-[state=unchecked]:bg-transparent',
+            'hover:border-blue-500 hover:data-[state=checked]:bg-blue-600',
+            'flex items-center justify-center self-center rounded-[8px] disabled:data-[state=checked]:border-gray-300 disabled:data-[state=checked]:bg-gray-600/40',
             size === 'sm' && 'h-3 w-3',
-            error && 'border-error',
+            error && 'border-red-500',
             className
           )}
           checked={checked}
@@ -80,7 +79,7 @@ const Checkbox = React.forwardRef<
           <CheckboxPrimitive.Indicator
             className={cn(
               '[&>svg]:stroke-white',
-              disabled && '[&>svg]:stroke-divider-secondary',
+              disabled && '[&>svg]:stroke-gray-300',
               size === 'sm' && '[&>svg]:h-3 [&>svg]:w-3'
             )}
           >

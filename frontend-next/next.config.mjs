@@ -7,6 +7,14 @@ const withNextIntl = createNextIntlPlugin(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "**",
+            },
+        ],
+    },
     webpack(config) {
         // rule handles SVG imports
         const fileLoaderRule = config.module.rules.find((rule) =>

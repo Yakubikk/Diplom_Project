@@ -1,0 +1,123 @@
+{
+  "Loading": {
+    "loading": "Загрузка, калі ласка, пачакайце..."
+  },
+  "Class": {
+    "navbar": {
+      "feed": "Стужка",
+      "tasks": "Заданні",
+      "users": "Карыстальнікі"
+    },
+    "subject": "Прадмет",
+    "meet": "Сустрэча",
+    "join": "Далучыцца",
+    "copyLink": "Скапіяваць спасылку",
+    "copiedLink": "Спасылка на відэасустрэчу скапіявана.",
+    "upcoming": "Набліжаюцца",
+    "noUpcoming": "У вас няма заданняў, якія трэба здаць на наступным тыдні.",
+    "viewAll": "Паглядзець усё"
+  },
+  "TextEditor": {
+    "refer": "Звярніцеся да курса",
+    "cancel": "Адмена",
+    "publish": "Апублікаваць",
+    "bold": "Тлусты",
+    "italics": "Курсіў",
+    "underlined": "Падкрэслены",
+    "list": "Маркіраваны спіс",
+    "clearFormatting": "Выдаліць фармаціраванне",
+    "youtube": "Дадаць відэа з YouTube",
+    "file": "Загрузіць файл",
+    "link": "Дадаць спасылку",
+    "modals": {
+      "youtube": {
+        "enter": "Увядзіце URL відэа",
+        "add": "Дадаць",
+        "cancel": "Адмена",
+        "views": {
+          "one": "прагляд",
+          "few": "прагляды",
+          "many": "праглядаў"
+        },
+        "likes": {
+          "one": "лайк",
+          "few": "лайка",
+          "many": "лайкаў"
+        },
+        "hours": {
+          "one": "гадзіна",
+          "few": "гадзіны",
+          "many": "гадзін"
+        },
+        "minutes": {
+          "one": "хвіліна",
+          "few": "хвіліны",
+          "many": "хвілін"
+        }
+      }
+    }
+  },
+  "Header": {
+    "account": {
+      "hello": "Прывітанне",
+      "accountManagement": "Кіраванне акаўнтам"
+    },
+    "calendar": {
+      "today": "Сёння"
+    },
+    "join": {
+      "join": "Далучыцца",
+      "logged": "Вы ўвайшлі ў акаўнт",
+      "changeAccount": "Змяніць акаўнт",
+      "courseCode": "Код курса",
+      "enterCode": "Увядзіце код курса (вы можаце атрымаць яго ў вашага выкладчыка).",
+      "howToLogin": "Як увайсці з дапамогай кода курса",
+      "useWithAccess": "Выкарыстоўвайце акаўнт з правамі доступу.",
+      "enterCodeHow": "Увядзіце код курса, які складаецца з 5-7 літар ці лічбаў. Ён не павінен утрымліваць прабелаў або спецыяльных сімвалаў.",
+      "cancel": "Адмена"
+    }
+  },
+  "Sidebar": {
+    "myPsu": "МойПДУ",
+    "mainPage": "Галоўная старонка",
+    "calendar": "Каляндар"
+  },
+  "LocaleSwitcher": {
+    "label": "Змяніць мову",
+    "locale": "{locale, select, ru {\uD83C\uDDF7\uD83C\uDDFA} en {\uD83C\uDDEC\uD83C\uDDE7} be {\uD83C\uDDE7\uD83C\uDDFE} other {Неизвестно}}"
+  },
+  "Authentication": {
+    "registration": "Рэгістрацыя",
+    "haveAccount": "У вас ужо ёсць акаўнт?",
+    "noAccount": "У вас няма акаўнта?",
+    "login": "Аўтарызацыя",
+    "register": "Рэгістрацыя",
+    "loginButton": "Аўтарызавацца",
+    "sendCode": "Адправіць код",
+    "registerButton": "Зарэгістравацца",
+    "byEmail": "Па e-mail",
+    "byPhone": "Па нумары тэлефона"
+  },
+  "Form": {
+    "requiredFieldError": "Гэта поле абавязковае для запаўнення",
+    "invalidEmailError": "Калі ласка, увядзіце карэктны email",
+    "invalidPhoneError": "Калі ласка, увядзіце карэктны нумар тэлефона",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Пароль"
+  },
+  "LoginForm": {
+    "success": "Уваход паспяховы!",
+    "failure": "Не атрымалася ўвайсці. Калі ласка, паспрабуйце яшчэ раз."
+  },
+  "RegisterForm": {
+    "passwordMismatchError": "Паролі не супадаюць",
+    "fullnamePlaceholder": "Поўнае імя",
+    "confirmPasswordPlaceholder": "Пацвердзіце пароль",
+    "isProfessor": "Я выкладчык",
+    "agreeText": "Я згодзен з",
+    "agreeLinkText": "умовамі выкарыстання",
+    "agreeContinuation": "і палітыкай канфідэнцыяльнасці",
+    "success": "Рэгістрацыя прайшла паспяхова!",
+    "failure": "Памылка рэгістрацыі. Калі ласка, паспрабуйце яшчэ раз."
+  }
+}

@@ -1,155 +1,127 @@
 {
   "HomePage": {
-    "bannerText": "Effective IT solutions\nfor your business",
-    "bannerButtonText": "Discuss project",
-    "services": "Services",
-    "serviceDescription": "Our team is ready to support your enterprise's digital transformation and product development needs",
-    "solutions": "Solutions",
-    "solutionsDescription": "We provide solutions tailored to your needs in areas where we have proven expertise",
-    "promoText": "Have a project in mind?\nLet's work together",
-    "promoButtonText": "Discuss Project",
-    "cases": "Сase Studies",
-    "casesDescription": "We have successfully completed a wide range of IT projects in different industries.  Here you can explore a selection of them",
-    "blog": "Blog",
-    "blogDescription": "Follow our blog to be first to learn about news, events, useful information and completed projects are waiting for you",
-    "contact": "Have a project in mind?\nLet's work together",
-    "contactDescription": "Please contact us, tell us about your project and we will respond shortly"
+    "title": "Hello world!",
+    "about": "Go to the about page"
   },
-  "BlogPage": {
-    "subheaderOne": "Latest",
-    "subheaderTwo": "Blog",
-    "subheaderThree": "You may also like ",
-    "buttonText": "Load more",
-    "tagOne": "All articles",
-    "contentTitle": "Contents:"
+  "Loading": {
+    "loading": "Loading, please wait..."
   },
-  "AboutUsPage": {
-    "title": "About us",
-    "subtitle": "We resolve complex issues your business faces",
-    "description": "Vebtech is a technology-driven IT company which specializes in custom software development, AI-driven solutions, web and mobile products.\n\nWe provide digital solutions to businesses across various sectors, helping them streamline operations, modernize infrastructure, and implement the latest technology trends.",
-    "infoTitle": "Our goal",
-    "infoDescription": "We see our goal in developing innovative, reliable IT solutions that help businesses in their digital transformation journey.\n\nFor us, it's not just about the technology, but the people behind it. We encourage teamwork, creativity, and constant learning. By working closely with our clients, we build practical solutions that have a real impact and help businesses grow and innovate.",
-    "infoTitleTwo": "Why us?",
-    "infoTitleThree": "Our office",
-    "infoTitleFour": "Life at Vebtech",
-    "infoDescriptionTwo": "We are you reliable partner in the world of IT\nVEB Technologies LLC teams specialize in developing software products and delivering fintech IT services\n\nWe started our journey as an independent company back in 2018, and are proud to be a resident of the High Technology Park, the biggest IT hub in Eastern Europe",
-    "advantageOneTitle": "250+",
-    "advantageTwoTitle": "25+ Years of experience",
-    "advantageThreeTitle": "15",
-    "advantageFourTitle": "130+",
-    "advantageOne": "IT Professionals",
-    "advantageTwo": "in creating IT services for banks and other financial organizations",
-    "advantageThree": "Competence centers",
-    "advantageFour": "Сertificates in IT",
-    "cardTitleOne": "Full cycle development",
-    "cardDescriptionOne": "We manage the entire web development process, from the design concepts and prototyping to coding and continuous support",
-    "cardTitleTwo": "Efficiency",
-    "cardDescriptionTwo": "We have built efficient processes for delivering software development services. Our gained experience allows us to  educe the goal-achieving time to the minimum.",
-    "cardTitleThree": "Flexibility",
-    "cardDescriptionThree": "Easily adjust team size and resources to fit evolving project requirements.",
-    "accordion": "Our History",
-    "city": "Minsk",
-    "address": "220073, Skryganova st., 6, kom. 601\nBelarus",
-    "map": "SEE ON GOOGLE MAPS"
-  },
-  "Header": {
-    "services": "Services",
-    "solutions": "Solutions",
-    "caseStudies": "Case studies",
-    "blog": "Blog",
-    "aboutUs": "About us",
-    "contactUs": "CONTACT US"
-  },
-  "Footer": {
-    "services": "Services",
-    "solutions": "Solutions",
-    "caseStudies": "Case studies",
-    "blog": "Blog",
-    "aboutUs": "About us",
-    "contacts": "Contacts",
-    "rights": "© 2025 VEB Technologies LLC - IT solutions for business. All rights reserved."
-  },
-  "CaseStudiesPage": {
-    "contactUsTitle": "Are you ready to start a project?",
-    "contactUsText": "Please contact us, tell us about your project and we will respond shortly",
-    "contactUsButtonText": "CONTACT US"
-  },
-  "Components": {
-    "mailForm": {
-      "title": "Are you ready to start a project?",
-      "description": "Get monthly updates on the case studies, technology insights and tips right in your mailbox",
-      "btnText": "Submit"
+  "Class": {
+    "navbar": {
+      "feed": "Feed",
+      "tasks": "Assignments",
+      "users": "Users"
     },
-    "localeSwitcher": {
-      "toggle": "Toggle"
-    }
-  },
-  "ServicesPage": {
-    "title": "Are you ready to start a project?",
-    "description": "Please contact us, tell us about your project and we will\nrespond shortly",
-    "btnText": "Request consultation",
-    "contactTitle": "Let’s discuss your  project and ideas!",
-    "contactDescription": "Please contact us, tell us about your project and we will\nrespond shortly",
-    "contactBtnText": "CONTACT US",
-    "headerTitle": "Services we provide",
-    "headerDescription": "Vebtech manages the entire software development process, from initial idea discussions to design and ongoing improvements. We are ready to help you at any stage of the project.",
-    "more": "More",
-    "offer": "What we offer as a service",
-    "stack": "Technology stack"
-  },
-  "ContactUsForm": {
-    "fullNamePlaceholder": "Full Name*",
-    "emailPlaceholder": "E-mail address*",
-    "phonePlaceholder": "Phone number*",
-    "helpPlaceholder": "How can we help you?",
-    "agreeText": "Sending the form",
-    "agreeLinkText": "I agree with\n",
-    "agreeContinuation": "processing rules personal data",
-    "sendButton": "SEND",
-    "requiredFieldError": "Required field",
-    "invalidEmailError": "Not valid email",
-    "invalidPhoneError": "Not valid phone number"
-  },
-  "BlogMainComponent": {
+    "subject": "Subject",
+    "meet": "Meet",
+    "join": "Join",
+    "copyLink": "Copy link",
+    "copiedLink": "Video meeting link copied.",
+    "upcoming": "Upcoming",
+    "noUpcoming": "You don't have any assignments due next week.",
     "viewAll": "View all"
   },
-  "CasesContentComponent": {
-    "title": "Explore our portfolio of clients success cases",
-    "mobileTitle": "Case studies",
-    "nothingFoundTitle": "Nothing was found",
-    "nothingFoundDescription": "Unfortunately, there are no suitable results with these filters. Reset the filters\n to start the search again."
+  "TextEditor": {
+    "refer": "Refer to the course",
+    "cancel": "Cancel",
+    "publish": "Publish",
+    "bold": "Bold",
+    "italics": "Italics",
+    "underlined": "Underlined",
+    "list": "Bulleted list",
+    "clearFormatting": "Clear formatting",
+    "youtube": "Add video from YouTube",
+    "file": "Upload file",
+    "link": "Add link",
+    "modals": {
+      "youtube": {
+        "enter": "Enter video URL",
+        "add": "Add",
+        "cancel": "Cancel",
+        "views": {
+          "one": "view",
+          "few": "views",
+          "many": "views"
+        },
+        "likes": {
+          "one": "like",
+          "few": "likes",
+          "many": "likes"
+        },
+        "hours": {
+          "one": "hour",
+          "few": "hours",
+          "many": "hours"
+        },
+        "minutes": {
+          "one": "minute",
+          "few": "minutes",
+          "many": "minutes"
+        }
+      }
+    }
   },
-  "MailForm": {
-    "title": "Subscribe to our Newsletter",
-    "description": "Stay updated with our latest news and offers.",
-    "fullNamePlaceholder": "Full Name *",
-    "emailPlaceholder": "Email *",
-    "requiredFieldError": "Required field",
-    "agreeText": "Sending the form",
-    "agreeLinkText": "I agree with",
-    "agreeContinuation": "processing rules personal data",
-    "subscribeButton": "Subscribe",
-    "invalidEmailError": "Not valid email"
+  "Header": {
+    "account": {
+      "hello": "Hello",
+      "accountManagement": "Account Management"
+    },
+    "calendar": {
+      "today": "Today"
+    },
+    "join": {
+      "join": "Join",
+      "logged": "You are logged in to account",
+      "changeAccount": "Change account",
+      "courseCode": "Course code",
+      "enterCode": "Enter the course code (you can get it from your teacher).",
+      "howToLogin": "How to login with a course code",
+      "useWithAccess": "Use an account with access rights.",
+      "enterCodeHow": "Enter the course code, which consists of 5-7 letters or numbers. It should not contain spaces or special characters.",
+      "cancel": "Cancel"
+    }
   },
-  "CaseStudiesComponent": {
-    "title": "Case Studies",
-    "description": "We have successfully completed a wide range of IT projects in different industries. Here you can explore a selection of them",
-    "allCasesButton": "All cases"
+  "Sidebar": {
+    "myPsu": "MyPSU",
+    "mainPage": "Main page",
+    "calendar": "Calendar"
   },
-  "CaseContentComponent": {
-    "clientTitle": "Client",
-    "duration": "DURATION",
-    "techStackTitle": "TECHNOLOGY STACK",
-    "numbersNote": "* Numbers steadily growing",
-    "caseStudiesTitle": "Case Studies"
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ru {\uD83C\uDDF7\uD83C\uDDFA} en {\uD83C\uDDEC\uD83C\uDDE7} be {\uD83C\uDDE7\uD83C\uDDFE} other {Неизвестно}}"
   },
-  "Filter": {
-    "buttonOne": "Show more +",
-    "buttonTwo": "Reset filter"
+  "Authentication": {
+    "registration": "Registration",
+    "haveAccount": "Do you already have an account?",
+    "noAccount": "Don't have an account?",
+    "login": "Login",
+    "register": "Register",
+    "loginButton": "Login",
+    "sendCode": "Send code",
+    "registerButton": "Register",
+    "byEmail": "By e-mail",
+    "byPhone": "By phone number"
   },
-  "Common": {
-    "viewAll": "View all",
-    "details": "DETAILS",
-    "contact": "Contact us"
+  "Form": {
+    "requiredFieldError": "This field is required",
+    "invalidEmailError": "Please enter a valid email address",
+    "invalidPhoneError": "Please enter a valid phone number.",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password"
+  },
+  "LoginForm": {
+    "success": "Login successful!",
+    "failure": "Login failed. Please try again."
+  },
+  "RegisterForm": {
+    "passwordMismatchError": "Passwords do not match",
+    "fullnamePlaceholder": "Full Name",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "isProfessor": "I am a teacher",
+    "agreeText": "I agree with the",
+    "agreeLinkText": "terms and conditions",
+    "agreeContinuation": "and privacy policy",
+    "success": "Registration successful!",
+    "failure": "Registration failed. Please try again."
   }
 }

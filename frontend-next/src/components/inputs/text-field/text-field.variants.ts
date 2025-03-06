@@ -17,7 +17,7 @@ export enum TextFieldVariants {
 }
 
 const textFieldVariants = cva(
-  'relative block w-full border-0 border-secondary bg-transparent text-bodyLarge font-medium text-text-secondary outline outline-0 transition-colors placeholder:text-text-secondary/45 focus:outline-0 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-text-secondary/45',
+  'relative block w-full border-0 border-gray-400 focus:border-gray-800 bg-transparent text-bodyLarge font-medium outline outline-0 transition-colors placeholder:text-black/45 focus:outline-0 disabled:cursor-not-allowed disabled:bg-transparent disabled:text-black/45',
   {
     variants: {
       variant: {
@@ -43,7 +43,7 @@ const textFieldVariants = cva(
   }
 );
 
-const labelVariants = cva('relative block text-text-secondary', {
+const labelVariants = cva('relative block', {
   variants: {
     color: {
       [`${TextFieldColors.primary}`]: '',
@@ -62,13 +62,13 @@ const labelVariants = cva('relative block text-text-secondary', {
 });
 
 const borderVariants = cva(
-  'pointer-events-none absolute inset-0 select-none border-0 border-divider-gray peer-focus:border-divider-dark peer-[:not([disabled])]:peer-hover:border-divider-dark peer-data-[error=true]:border-error peer-data-[error=true]:peer-hover:border-error',
+  'pointer-events-none absolute inset-0 select-none border-0 border-gray-400 peer-focus:border-black peer-[:not([disabled])]:peer-hover:border-gray-600 peer-data-[error=true]:border-red-500 peer-data-[error=true]:peer-hover:border-red-500',
   {
     variants: {
       variant: {
         [`${TextFieldVariants.standard}`]: 'border-b',
         [`${TextFieldVariants.outlined}`]:
-          'rounded-lg border peer-focus:ring-4 peer-focus:ring-primary/20 peer-data-[error=true]:peer-focus:ring-error/20',
+          'rounded-lg border peer-focus:ring-4 peer-focus:ring-blue-500/20 peer-data-[error=true]:peer-focus:ring-red-500/20',
       },
     },
     defaultVariants: {

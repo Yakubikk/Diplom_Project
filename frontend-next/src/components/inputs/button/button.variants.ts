@@ -19,25 +19,23 @@ export enum ButtonVariants {
 }
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap font-semibold tracking-overlineLarge transition-colors focus-visible:outline-none focus-visible:ring-4 disabled:pointer-events-none disabled:bg-disabled disabled:text-white group',
+  'inline-flex items-center justify-center whitespace-nowrap font-semibold tracking-overlineLarge transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:bg-gray-200 disabled:text-gray-400 group',
   {
     variants: {
       color: {
-        [`${ButtonColors.primary}`]:
-          'focus-visible:ring-primary-button-active/20',
-        [`${ButtonColors.secondary}`]: 'focus-visible:ring-primary-button/20',
+        [`${ButtonColors.primary}`]: '',
+        [`${ButtonColors.secondary}`]: '',
       },
       variant: {
-        [`${ButtonVariants.contained}`]: true,
-        [`${ButtonVariants.outlined}`]:
-          'border-2 bg-white disabled:border-disabled',
-        [`${ButtonVariants.text}`]: '',
+        [`${ButtonVariants.contained}`]: '',
+        [`${ButtonVariants.outlined}`]: 'border-2 bg-white',
+        [`${ButtonVariants.text}`]: 'border-0',
       },
       size: {
         [`${ButtonSizes.xs}`]:
-          'h-6 rounded-xl px-1 text-buttonSmall font-light leading-buttonSmall bg-transparent',
+          'h-6 rounded-sm px-1 text-tag font-light leading-tag bg-transparent',
         [`${ButtonSizes.sm}`]:
-          'h-12 rounded-[100px] px-5 text-tag font-normal leading-tag tracking-overlineNone border-[1px]',
+          'h-10 rounded-md px-3 text-buttonSmall font-normal leading-tag tracking-overlineNone',
         [`${ButtonSizes.md}`]:
           'h-12 rounded-xl px-6 text-buttonSmall leading-buttonSmall',
         [`${ButtonSizes.lg}`]:
@@ -57,19 +55,19 @@ export const buttonVariants = cva(
         color: `${ButtonColors.primary}`,
         variant: `${ButtonVariants.contained}`,
         className:
-          'bg-primary text-white hover:bg-primary-button-hover active:bg-primary-button-active',
+          'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800',
       },
       {
         color: `${ButtonColors.primary}`,
         variant: `${ButtonVariants.outlined}`,
         className:
-          'border-secondary text-secondary hover:border-primary hover:text-primary active:border-primary active:text-primary active:shadow-buttonShadow',
+          'border-blue-500 hover:border-blue-600 active:border-blue-700 active:shadow-lg',
       },
       {
         color: `${ButtonColors.primary}`,
         variant: `${ButtonVariants.text}`,
         className:
-          'text-primary-button hover:text-primary-button-hover active:text-primary-button-active disabled:bg-white disabled:text-disabled',
+          'hover:bg-blue-100 disabled:bg-white disabled:text-gray-300',
       },
       {
         color: `${ButtonColors.secondary}`,
@@ -80,14 +78,14 @@ export const buttonVariants = cva(
         color: `${ButtonColors.secondary}`,
         variant: `${ButtonVariants.outlined}`,
         className:
-          'text-text-buttonsHover border-divider hover:border-secondary hover:text-secondary active:bg-secondary active:text-white',
+          'border-divider hover:border-secondary hover:text-secondary active:bg-secondary active:text-white',
       },
     ],
   }
 );
 
 export const buttonIconSizeVariants = cva(
-  '[&>svg]:size-[1em] [&>svg]:text-[currentColor] [&>svg]:group-hover:rotate-90 [&>svg]:group-active:rotate-90 [&>svg]:transition-all [&>svg]:duration-100',
+  '[&>svg]:size-[1em] [&>svg]:text-[currentColor]',
   {
     variants: {
       size: {

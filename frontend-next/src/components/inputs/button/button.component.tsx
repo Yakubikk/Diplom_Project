@@ -1,89 +1,82 @@
 'use client';
 
 import { Slot } from '@radix-ui/react-slot';
-import Ripple from 'material-ripple-effects';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { getRippleVariant } from './button.helper';
 import {
-  buttonIconSizeVariants,
-  type ButtonVariantProps,
-  buttonVariants,
+    buttonIconSizeVariants,
+    type ButtonVariantProps,
+    buttonVariants,
 } from './button.variants';
+import { getRippleVariant } from './button.helper';
+import useRipple from "use-ripple-hook";
+import mergeRefs from "merge-refs";
 
-export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
-    ButtonVariantProps {
-  asChild?: boolean;
-  ripple?: boolean | 'light' | 'dark';
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>, ButtonVariantProps {
+    asChild?: boolean;
+    ripple?: boolean | 'light' | 'dark';
+    startIcon?: React.ReactNode;
+    endIcon?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      ripple = false,
-      className,
-      variant,
-      color,
-      fullWidth,
-      asChild = false,
-      size,
-      children,
-      startIcon,
-      endIcon,
-      onMouseDown,
-      ...props
-    },
-    ref
-  ) => {
-    const Comp = asChild ? Slot : 'button';
-    const rippleEffect = ripple !== undefined && new Ripple();
+    ({
+         className,
+         variant,
+         ripple = false,
+         color,
+         fullWidth,
+         asChild = false,
+         size,
+         children,
+         startIcon,
+         endIcon,
+         ...props
+     },
+     ref
+    ) => {
+        const Comp = asChild ? Slot : 'button';
+        const rippleType = getRippleVariant(variant, ripple);
 
-    return (
-      <Comp
-        className={cn(
-          buttonVariants({ color, variant, fullWidth, size, className })
-        )}
-        ref={ref}
-        onMouseDown={(e) => {
-          if (ripple) {
-            const rippleVariant = getRippleVariant(variant, ripple);
+        const [rippleRef, rippleEvent] = useRipple({
+            color: rippleType === 'dark' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.3)',
+        });
 
-            rippleEffect.create(e, rippleVariant);
-          }
-
-          return typeof onMouseDown === 'function' && onMouseDown(e);
-        }}
-        {...props}
-      >
-        <>
-          {startIcon && (
-            <span
-              className={cn(
-                buttonIconSizeVariants({ size }),
-                'ml-[-6px] mr-[10px]'
-              )}
+        return (
+            <Comp
+                className={cn(
+                    buttonVariants({ color, variant, fullWidth, size, className })
+                )}
+                ref={mergeRefs(ref, rippleRef)}
+                onPointerDown={ripple ? rippleEvent : undefined}
+                {...props}
             >
-              {startIcon}
-            </span>
-          )}
-          {children}
-          {endIcon && (
-            <span
-              className={cn(
-                buttonIconSizeVariants({ size }),
-                'ml-[10px] mr-[-6px]'
-              )}
-            >
-              {endIcon}
-            </span>
-          )}
-        </>
-      </Comp>
-    );
-  }
+                <>
+                    {startIcon && (
+                        <span
+                            className={cn(
+                                buttonIconSizeVariants({ size }),
+                                'ml-[-6px] mr-[10px]'
+                            )}
+                        >
+                            {startIcon}
+                        </span>
+                    )}
+                    {children}
+                    {endIcon && (
+                        <span
+                            className={cn(
+                                buttonIconSizeVariants({ size }),
+                                'ml-[10px] mr-[-6px]'
+                            )}
+                        >
+                            {endIcon}
+                        </span>
+                    )}
+                </>
+            </Comp>
+        );
+    }
 );
 Button.displayName = 'Button';
 

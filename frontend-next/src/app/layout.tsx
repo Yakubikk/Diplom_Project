@@ -22,10 +22,10 @@ export default async function LocaleLayout(
     return (
         <html lang={locale}>
         <body
-            className={`antialiased`}
+            className='antialiased'
         >
         <NextIntlClientProvider messages={messages}>
-            <div className='flex min-h-screen'>
+            <div className='min-h-screen h-screen'>
                 {children}
             </div>
         </NextIntlClientProvider>

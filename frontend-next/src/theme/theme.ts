@@ -9,12 +9,12 @@ import { lineHeight } from './line-height';
 import { padding } from './padding';
 
 export const theme: Config['theme'] = {
-  colors,
+  // colors,
   fontFamily,
   fontSize,
   lineHeight,
   letterSpacing,
-  borderRadius,
+  // borderRadius,
   extend: {
     boxShadow,
     padding,

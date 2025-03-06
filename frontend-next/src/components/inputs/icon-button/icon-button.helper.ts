@@ -8,13 +8,8 @@ export const getRippleVariant = (
   ripple: boolean | 'light' | 'dark'
 ) => {
   if (typeof ripple === 'boolean') {
-    if (
-      variant === `${IconButtonVariants.outlined}` ||
-      variant === `${IconButtonVariants.text}`
-    ) {
-      return 'dark';
-    }
-    return 'light';
+    if (variant === `${IconButtonVariants.contained}`) return 'light';
+    return 'dark';
   }
   return ripple;
 };

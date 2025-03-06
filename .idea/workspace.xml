@@ -12,6 +12,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yakubikk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yakubikk/Diplom_Project.git&quot;,
+    &quot;accountId&quot;: &quot;6d1d451f-dbf2-417a-b427-1668f5081bdc&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -52,6 +64,8 @@
       <workItem from="1736176162824" duration="91000" />
       <workItem from="1738671480014" duration="8000" />
       <workItem from="1738671494289" duration="5000" />
+      <workItem from="1738889384673" duration="10000" />
+      <workItem from="1738916467625" duration="18000" />
     </task>
     <servers />
   </component>

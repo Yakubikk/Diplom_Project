@@ -7,14 +7,11 @@ import axios, {
 } from 'axios';
 import { defaultLocale } from '@/config';
 import {
-  type CaseItem,
-  type HomePageElements,
-  type PageInfo,
-  type ServiceItem,
-  type Solution,
-  type ArticleItem,
-  type ContactUsPayload,
-  type ContactUsResponse,
+  type RegisterPayload,
+  type RegisterResponse,
+  LoginPayload,
+  LoginResponse,
+  LoginPhonePayload,
 } from '@/types';
 import { fakeEndpoints } from './fakeEndpoints';
 
@@ -42,7 +39,7 @@ if (useFakeBackend) {
 }
 
 api.interceptors.response.use(
-  (response: AxiosResponse) => response, // Реальные ответы обрабатываются как обычно
+  (response: AxiosResponse) => response,
   (error) => {
     const config = error as InternalAxiosRequestConfig & {
       isFake?: boolean;
@@ -58,7 +55,7 @@ api.interceptors.response.use(
         headers: {},
         config,
       };
-      return Promise.resolve(fakeResponse); // Возвращаем успешный фейковый ответ
+      return Promise.resolve(fakeResponse);
     }
     console.log(error);
   }
@@ -71,54 +68,25 @@ const getResponseData = <T>(
 };
 
 const ApiService = {
-  getSolutionsInfo: async (): Promise<PageInfo | undefined> => {
-    return getResponseData<PageInfo>(await api.get('solutions/info'));
+  postRegister: async (
+    formData: RegisterPayload
+  ): Promise<RegisterResponse | undefined> => {
+    return getResponseData<RegisterResponse>(
+      await api.post(`${process.env.API_URL}register`, formData)
+    );
   },
-  getSolutions: async (): Promise<Solution[] | undefined> => {
-    return getResponseData<Solution[]>(await api.get('solutions'));
+  postLogin: async (
+      formData: LoginPayload
+  ): Promise<LoginResponse | undefined> => {
+    return getResponseData<LoginResponse>(
+        await api.post(`${process.env.API_URL}login`, formData)
+    );
   },
-
-  getBlogInfo: async (): Promise<PageInfo | undefined> => {
-    return getResponseData<PageInfo>(await api.get('blog/info'));
-  },
-  getBlogArticles: async (): Promise<ArticleItem[] | undefined> => {
-    return getResponseData<ArticleItem[]>(await api.get('articles'));
-  },
-  getBlogArticle: async (name: string): Promise<ArticleItem | undefined> => {
-    return getResponseData<ArticleItem>(await api.get(`articles/${name}`));
-  },
-  getHomeInfo: async (): Promise<PageInfo | undefined> => {
-    return getResponseData<PageInfo>(await api.get('home/info'));
-  },
-  getHomePageElements: async (): Promise<HomePageElements | undefined> => {
-    return getResponseData<HomePageElements>(await api.get('home/elements'));
-  },
-
-  getCases: async (): Promise<CaseItem[] | undefined> => {
-    return getResponseData<CaseItem[]>(await api.get('cases'));
-  },
-  getCase: async (name: string): Promise<CaseItem | undefined> => {
-    return getResponseData<CaseItem>(await api.get(`cases/${name}`));
-  },
-  getCasesInfo: async (): Promise<PageInfo | undefined> => {
-    return getResponseData<PageInfo>(await api.get('case-studies/info'));
-  },
-
-  getService: async (name: string): Promise<ServiceItem | undefined> => {
-    return getResponseData<ServiceItem>(await api.get(`services/${name}`));
-  },
-  getServicesInfo: async (): Promise<PageInfo | undefined> => {
-    return getResponseData<PageInfo>(await api.get('services/info'));
-  },
-  getServices: async (): Promise<ServiceItem[] | undefined> => {
-    return getResponseData<ServiceItem[]>(await api.get('services'));
-  },
-
-  postContactUs: async (
-    formData: ContactUsPayload
-  ): Promise<ContactUsResponse | undefined> => {
-    return getResponseData<ContactUsResponse>(
-      await api.post(`${process.env.API_URL}contact-us`, formData)
+  postPhoneLogin: async (
+      formData: LoginPhonePayload
+  ): Promise<LoginResponse | undefined> => {
+    return getResponseData<LoginResponse>(
+        await api.post(`${process.env.API_URL}phoneLogin`, formData)
     );
   },
 };

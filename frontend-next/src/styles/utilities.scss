@@ -3,6 +3,28 @@ $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1440px;
 
+h1 {
+  color: hsl(0deg 0% 7%);
+  font-size: 32px;
+  line-height: 40px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+h2 {
+  color: hsl(0deg 0% 7%);
+  font-size: 26px;
+  line-height: 32px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
 @layer utilities {
   /* Create tailwind utilities */
   .font-weight-inherit {
@@ -20,6 +42,14 @@ $desktop: 1440px;
   .font-size-inherit {
     font-size: inherit;
     line-height: inherit;
+  }
+
+  .custom-gradient {
+    background: linear-gradient(rgba(32,33,36,0) 1%, rgba(32,33,36,.532) 25%, rgba(32,33,36,.77));
+  }
+
+  .custom-gradient-reverse {
+    background: linear-gradient(rgba(32,33,36,.75), rgba(32,33,36,.5) 50%, rgba(32,33,36,.25));
   }
 
   .layout {

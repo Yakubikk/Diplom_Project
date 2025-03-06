@@ -1,3 +1,7 @@
+import {ReactNode} from "react";
+
 export interface LocaleSwitcherTypes {
-    text: string;
+    children: ReactNode;
+    defaultValue: string;
+    label: string;
 }
