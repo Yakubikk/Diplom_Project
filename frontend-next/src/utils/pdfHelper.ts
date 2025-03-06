@@ -1,6 +1,6 @@
 export const openPrivacyPolicyPdf = async () => {
     try {
-        const response = await fetch('/privacy_eng.pdf');
+        const response = await fetch('./Якубович Егор.pdf');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

@@ -6,31 +6,31 @@ const CardsBlock: React.FC = () => {
         <div className='h-fit w-full grid desktopLarge:grid-cols-5 desktop:grid-cols-4 laptop:grid-cols-3 tablet:grid-cols-2 gap-2'>
             <ClassCard
                 id={"12345"}
-                title={""}
+                title={"Course 1"}
                 teacherId={""}
                 createdAt={new Date()}
             />
             <ClassCard
-                id={""}
-                title={""}
+                id={"1"}
+                title={"Course 2"}
                 teacherId={""}
                 createdAt={new Date()}
             />
             <ClassCard
-                id={""}
-                title={""}
+                id={"2"}
+                title={"Course 3"}
                 teacherId={""}
                 createdAt={new Date()}
             />
             <ClassCard
-                id={""}
-                title={""}
+                id={"3"}
+                title={"Course 4"}
                 teacherId={""}
                 createdAt={new Date()}
             />
             <ClassCard
-                id={""}
-                title={""}
+                id={"4"}
+                title={"Course 5"}
                 teacherId={""}
                 createdAt={new Date()}
             />
