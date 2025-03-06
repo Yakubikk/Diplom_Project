@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
@@ -12,6 +12,7 @@ import Heading from '@tiptap/extension-heading';
 import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
 import ListItem from '@tiptap/extension-list-item';
+import History from '@tiptap/extension-history';
 import {
     IconBold,
     IconH1,
@@ -21,7 +22,7 @@ import {
     IconList,
     IconListNumbers,
     IconUnderline,
-    IconClearFormatting
+    IconClearFormatting, IconArrowBackUp, IconArrowForwardUp
 } from '@tabler/icons-react';
 import {IconButton, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from '@/components';
 import {cn} from '@/lib/utils';
@@ -37,6 +38,7 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
 
     const editor = useEditor({
         autofocus: true,
+        immediatelyRender: true,
         editorProps: {
             attributes: {
                 class: 'min-h-[100px] outline-none',
@@ -44,6 +46,9 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
         },
         extensions: [
             Document,
+            History.configure({
+                depth: 20,
+            }),
             Paragraph.configure({
                 HTMLAttributes: {
                     class: 'leading-relaxed',
@@ -79,12 +84,6 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
             else onChange(html);
         },
     });
-
-    useEffect(() => {
-        if (editor && value !== editor.getHTML()) {
-            editor.commands.setContent(value);
-        }
-    }, [value, editor]);
 
     if (!editor) {
         return null;
@@ -154,41 +153,52 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
             disabled: false,
             isActive: false,
         },
+        {
+            icon: <IconArrowBackUp />,
+            tooltip: t('clearFormatting'),
+            onClick: () => editor.chain().focus().undo().run(),
+            disabled: !editor.can().undo(),
+            isActive: false,
+        },
+        {
+            icon: <IconArrowForwardUp />,
+            tooltip: t('clearFormatting'),
+            onClick: () => editor.chain().focus().redo().run(),
+            disabled: !editor.can().redo(),
+            isActive: false,
+        },
     ];
 
     return (
         <div className='flex flex-col border-b pb-1 rounded-t bg-gray-100 hover:bg-gray-200 hover:bg-opacity-55 border-gray-500'>
-            <div className='p-4'>
+            <div className='text-editor p-4'>
                 <EditorContent editor={editor} />
             </div>
 
             <div className='flex flex-wrap px-2'>
                 <TooltipProvider disableHoverableContent>
                     {buttons.map((button, index) => (
-                        <React.Fragment key={index}>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <IconButton 
-                                        onClick={button.onClick} 
-                                        disabled={button.disabled} 
-                                        ripple 
-                                        variant='text' 
-                                        size='medium-small' 
-                                        className={cn(
-                                            'p-2 rounded transition-colors', 
-                                            button.isActive 
-                                                ? 'bg-blue-500 text-white hover:bg-blue-600' 
-                                                : 'text-gray-700 hover:bg-blue-100'
-                                        )}
-                                    >
-                                        {button.icon}
-                                    </IconButton>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    {button.tooltip}
-                                </TooltipContent>
-                            </Tooltip>
-                        </React.Fragment>
+                        <Tooltip key={index}>
+                            <TooltipTrigger asChild ripple='dark' disabled={button.disabled}>
+                                <IconButton
+                                    onClick={button.onClick}
+                                    disabled={button.disabled}
+                                    variant='text'
+                                    size='medium-small'
+                                    className={cn(
+                                        'p-2 rounded transition-colors',
+                                        button.isActive
+                                            ? 'bg-blue-500 text-white hover:bg-blue-600'
+                                            : 'hover:bg-blue-100'
+                                    )}
+                                >
+                                    {button.icon}
+                                </IconButton>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                {button.tooltip}
+                            </TooltipContent>
+                        </Tooltip>
                     ))}
                 </TooltipProvider>
             </div>

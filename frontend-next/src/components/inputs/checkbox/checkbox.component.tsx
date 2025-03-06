@@ -1,3 +1,5 @@
+'use client';
+
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import * as LabelRadix from '@radix-ui/react-label';
 import * as React from 'react';

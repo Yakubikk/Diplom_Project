@@ -31,7 +31,7 @@ const UploadedFile: React.FC<UploadedFileProps> = ({ index, file, onDelete }) =>
     };
 
     const isImage = file[0].type.startsWith('image/');
-    const imageUrl = isImage ? URL.createObjectURL(file[0]) : null;
+    const imageUrl = isImage && URL.createObjectURL(file[0]);
 
     return (
         <div className='flex w-full border border-gray-300 rounded-md'>
@@ -53,8 +53,13 @@ const UploadedFile: React.FC<UploadedFileProps> = ({ index, file, onDelete }) =>
                 </div>
             </div>
             <div className='flex w-5/6 rounded-r-lg items-center justify-between gap-3 pr-3'>
-                <div className='flex flex-col justify-center w-full h-full pl-3 group overflow-hidden'>
-                    <span className='text-bodyMedium font-semibold truncate tracking-[.00625em]'>
+                <div
+                    className='flex flex-col justify-center w-full h-full pl-3 group overflow-hidden hover:cursor-pointer group'
+                    onClick={() => {
+                        if (imageUrl) window.open(imageUrl, '_blank');
+                    }}
+                >
+                    <span className='text-bodyMedium font-semibold truncate tracking-[.00625em] group-hover:text-blue-600 hover:underline w-fit'>
                         {file[0].name}
                     </span>
                     <div className='flex items-center gap-1 text-bodySmall font-normal text-[#5f6368]'>

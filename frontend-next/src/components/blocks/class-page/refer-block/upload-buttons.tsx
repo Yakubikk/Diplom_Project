@@ -19,7 +19,7 @@ import {VisuallyHidden} from "@radix-ui/react-visually-hidden";
 
 interface UploadButtonsProps {
     addYoutubeFile: (file: YoutubeFile) => void;
-    uploadFiles: (files: File[]) => void;
+    uploadFile: (file: File[]) => void;
     addLink: (link: string) => void;
 }
 
@@ -38,7 +38,7 @@ interface UploadButtonsProps {
  * custom hooks `useYoutubeModal`, `useFileModal`, and `useLinkModal` for managing modal
  * states.
  */
-const UploadButtons: React.FC<UploadButtonsProps> = ({addYoutubeFile, addLink, uploadFiles}) => {
+const UploadButtons: React.FC<UploadButtonsProps> = ({addYoutubeFile, addLink, uploadFile}) => {
     const t = useTranslations('TextEditor');
     const youtubeModal = useYoutubeModal();
     const fileModal = useFileModal();
@@ -65,7 +65,7 @@ const UploadButtons: React.FC<UploadButtonsProps> = ({addYoutubeFile, addLink, u
             content: (
                 <UploadModal
                     onClose={fileModal.onClose}
-                    onAdd={uploadFiles}
+                    onAdd={uploadFile}
                 />
             ),
         },

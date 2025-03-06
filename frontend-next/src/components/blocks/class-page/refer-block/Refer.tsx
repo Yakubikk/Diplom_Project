@@ -17,7 +17,7 @@ const Refer: React.FC = () => {
         setFiles(prevState => [...prevState, { youtube: file }]);
     }, []);
 
-    const handleUploadFiles = useCallback((files: File[]) => {
+    const handleUploadFile = useCallback((files: File[]) => {
         setFiles(prevState => [...prevState, { uploaded: files }]);
     }, []);
 
@@ -70,7 +70,7 @@ const Refer: React.FC = () => {
                     <div className='flex items-center justify-between px-4'>
                         <UploadButtons
                             addYoutubeFile={handleAddYoutubeFile}
-                            uploadFiles={handleUploadFiles}
+                            uploadFile={handleUploadFile}
                             addLink={handleAddLink}
                         />
                         <div className='flex gap-2'>

@@ -36,7 +36,7 @@ const Youtube: React.FC<YoutubeProps> = ({index, file, onDelete}) => {
                     className='flex flex-col justify-center w-full h-full pl-3 group overflow-hidden'
                 >
                     <span
-                        className='text-bodyMedium font-semibold truncate tracking-[.00625em] group-hover:text-blue-600 hover:underline'>
+                        className='text-bodyMedium font-semibold truncate tracking-[.00625em] group-hover:text-blue-600 hover:underline w-fit'>
                         {file.title}
                     </span>
                     <div className='flex items-center gap-1 text-bodySmall font-normal text-[#5f6368]'>

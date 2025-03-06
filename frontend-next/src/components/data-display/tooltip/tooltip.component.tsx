@@ -15,7 +15,7 @@ const TooltipTrigger = React.forwardRef<
     React.ComponentRef<typeof TooltipPrimitive.Trigger>,
     React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Trigger>
     & { ripple?: boolean | 'light' | 'dark'; }
->(({ asChild = true, ripple, ...props }, ref) => {
+>(({ asChild = true, ripple, disabled, ...props }, ref) => {
     const [rippleRef, rippleEvent] = useRipple({
         color: ripple === 'dark'
             ? 'rgba(0, 0, 0, 0.1)'
@@ -24,7 +24,7 @@ const TooltipTrigger = React.forwardRef<
 
     return <TooltipPrimitive.Trigger
         ref={mergeRefs(rippleRef, ref)}
-        onPointerDown={ripple ? rippleEvent : undefined}
+        onPointerDown={ripple && !disabled ? rippleEvent : undefined}
         asChild={asChild}
         {...props}
     />

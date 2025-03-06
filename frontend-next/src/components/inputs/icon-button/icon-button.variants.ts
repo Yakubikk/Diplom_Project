@@ -40,7 +40,7 @@ const iconButtonVariants = cva(
           [`${IconButtonShapes.square}`]: 'rounded-[.5rem]',
         },
         disabled: {
-          true: 'text-gray-400 cursor-default',
+          true: 'text-gray-400 cursor-default hover:bg-transparent',
           false: '',
         },
       },
