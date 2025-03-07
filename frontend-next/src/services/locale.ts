@@ -16,6 +16,6 @@ export async function setUserLocale(locale: Locale) {
 }
 
 export async function toggleUserLocale(){
-    if ((await cookies()).get(COOKIE_NAME)?.value === 'ru') await setUserLocale('en');
+    if (await getUserLocale() === 'ru') await setUserLocale('en');
     else await setUserLocale('ru');
 }

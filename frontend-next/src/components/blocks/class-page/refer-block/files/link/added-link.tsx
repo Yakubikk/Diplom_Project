@@ -11,6 +11,17 @@ interface AddedLinkProps {
     onDelete: (index: number) => void;
 }
 
+/**
+ * A component that displays a link with options to open it or delete it.
+ *
+ * @prop {number} index - The index of the link in the list.
+ * @prop {string} link - The URL of the link to display.
+ * @prop {function(number): void} onDelete - The function to be called when the delete button is clicked.
+ *
+ * @example
+ * <AddedLink index={0} link={'https://example.com'} onDelete={(index) => handleDeleteLink(index)} />
+ */
+
 const AddedLink: React.FC<AddedLinkProps> = ({index, link, onDelete}) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 

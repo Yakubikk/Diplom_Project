@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button, IconButton, Popover, PopoverContent, PopoverTrigger } from "@/components";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const ClassMeetBlock: React.FC = () => {
     const params = useParams();
@@ -65,7 +65,6 @@ const ClassMeetBlock: React.FC = () => {
                         </Button>
                     </PopoverContent>
                 </Popover>
-                <Toaster />
             </div>
             <Link href={`/meet/${id}`} target='_blank' className='w-full'>
                 <Button size='sm' fullWidth>

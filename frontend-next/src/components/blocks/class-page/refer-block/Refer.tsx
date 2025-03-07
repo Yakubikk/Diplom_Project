@@ -6,6 +6,26 @@ import { useTranslations } from 'next-intl';
 import { UploadButtons } from './upload-buttons';
 import { RenderFile } from './refer.render-file';
 
+/**
+* The Refer component is a functional component that renders a refer form.
+* It uses the TextEditor component to render a text editor for the user to
+* input text and the UploadButtons component to render buttons for uploading
+* YouTube videos, files, and links.
+*
+* When the user clicks the "Publish" button, the component will call the
+* `onSubmit` function with the current text and files as arguments.
+*
+* The component also uses the `useBeforeunload` hook to add a listener to the
+* window's beforeunload event. When the user tries to close the page, the
+* component will call the `handleBeforeUnload` function and prevent the page
+* from closing if the form is valid.
+*
+* Props:
+* - onSubmit: Function to call when the user clicks the "Publish" button.
+*
+* @example
+* <Refer onSubmit={(text, files) => console.log(text, files)} />
+*/
 const Refer: React.FC = () => {
     const [editorText, setEditorText] = useState('');
     const [isEditorOpen, setIsEditorOpen] = useState(false);

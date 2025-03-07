@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import '../styles/ui.scss';
 import { getUserLocale } from '@/services/locale';
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
     title: "MyPSU",
@@ -28,6 +29,7 @@ export default async function LocaleLayout(
             <div className='min-h-screen h-screen'>
                 {children}
             </div>
+            <Toaster />
         </NextIntlClientProvider>
         </body>
         </html>
