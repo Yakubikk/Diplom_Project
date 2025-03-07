@@ -7,9 +7,20 @@ export const onSubmitForm = async (
     values: RegisterPayload & { agree: boolean }
 ) => {
     return await ApiService.postRegister({
-        fullname: values.fullname,
+        firstname: values.firstname,
+        lastname: values.lastname,
+        patronymic: values.patronymic,
         email: values.email,
         password: values.password,
+        imageAvatar: values.imageAvatar,
         isProfessor: values.isProfessor,
+    });
+};
+
+export const getUserOnSubmit = async (
+    id: string
+) => {
+    return ApiService.getUserDataById({
+        id: id
     });
 };

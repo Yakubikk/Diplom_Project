@@ -43,6 +43,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isModal }) => {
 
         if (response) {
             toast.success(tl('success'));
+            console.log(response);
         } else {
             toast.error(tl('failure'));
         }

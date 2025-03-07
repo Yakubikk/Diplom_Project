@@ -1,4 +1,4 @@
-import {AddedFile, Youtube, UploadedFile} from "@/components";
+import {AddedFile, Youtube, UploadedFile, AddedLink} from "@/components";
 import React from "react";
 
 interface RenderFileProps {
@@ -30,7 +30,14 @@ export const RenderFile: React.FC<RenderFileProps> = ({file, index, onDelete}) =
         );
     }
     if (file.link) {
-        return <div key={index}>{file.link}</div>;
+        return (
+            <AddedLink
+                key={index}
+                index={index}
+                link={file.link}
+                onDelete={onDelete}
+            />
+        );
     }
     return null;
 };

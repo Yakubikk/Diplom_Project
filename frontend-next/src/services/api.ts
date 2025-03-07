@@ -11,7 +11,7 @@ import {
   type RegisterResponse,
   LoginPayload,
   LoginResponse,
-  LoginPhonePayload,
+  LoginPhonePayload, User,
 } from '@/types';
 import { fakeEndpoints } from './fakeEndpoints';
 
@@ -72,14 +72,14 @@ const ApiService = {
     formData: RegisterPayload
   ): Promise<RegisterResponse | undefined> => {
     return getResponseData<RegisterResponse>(
-      await api.post(`${process.env.API_URL}register`, formData)
+        await api.post(`${process.env.NEXT_PUBLIC_API_URL}users/sign-up`, formData)
     );
   },
   postLogin: async (
       formData: LoginPayload
   ): Promise<LoginResponse | undefined> => {
     return getResponseData<LoginResponse>(
-        await api.post(`${process.env.API_URL}login`, formData)
+        await api.post(`${process.env.NEXT_PUBLIC_API_URL}users/sign-in`, formData)
     );
   },
   postPhoneLogin: async (
@@ -87,6 +87,13 @@ const ApiService = {
   ): Promise<LoginResponse | undefined> => {
     return getResponseData<LoginResponse>(
         await api.post(`${process.env.API_URL}phoneLogin`, formData)
+    );
+  },
+  getUserDataById: async (
+      data: {id: string}
+  ): Promise<User | undefined> => {
+    return getResponseData<User>(
+        await api.post(`${process.env.NEXT_PUBLIC_API_URL}users/get-user`, data)
     );
   },
 };

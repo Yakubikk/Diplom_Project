@@ -13,20 +13,10 @@ import BulletList from '@tiptap/extension-bullet-list';
 import OrderedList from '@tiptap/extension-ordered-list';
 import ListItem from '@tiptap/extension-list-item';
 import History from '@tiptap/extension-history';
-import {
-    IconBold,
-    IconH1,
-    IconH2,
-    IconItalic,
-    IconLetterPSmall,
-    IconList,
-    IconListNumbers,
-    IconUnderline,
-    IconClearFormatting, IconArrowBackUp, IconArrowForwardUp
-} from '@tabler/icons-react';
 import {IconButton, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from '@/components';
 import {cn} from '@/lib/utils';
 import {useTranslations} from 'next-intl';
+import { getTextEditorButtons } from './textEditor-buttons';
 
 interface EditorProps {
     value: string;
@@ -89,85 +79,7 @@ const TextEditor: React.FC<EditorProps> = ({ value, onChange }) => {
         return null;
     }
 
-    const buttons = [
-        {
-            icon: <IconBold />,
-            tooltip: t('bold'),
-            onClick: () => editor.chain().focus().toggleBold().run(),
-            disabled: !editor.can().chain().focus().toggleBold().run(),
-            isActive: editor.isActive('bold'),
-        },
-        {
-            icon: <IconItalic />,
-            tooltip: t('italics'),
-            onClick: () => editor.chain().focus().toggleItalic().run(),
-            disabled: !editor.can().chain().focus().toggleItalic().run(),
-            isActive: editor.isActive('italic'),
-        },
-        {
-            icon: <IconUnderline />,
-            tooltip: t('underlined'),
-            onClick: () => editor.chain().focus().toggleUnderline().run(),
-            disabled: !editor.can().chain().focus().toggleUnderline().run(),
-            isActive: editor.isActive('underline'),
-        },
-        {
-            icon: <IconH1 />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
-            disabled: false,
-            isActive: editor.isActive('heading', { level: 1 }),
-        },
-        {
-            icon: <IconH2 />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().toggleHeading({ level: 2 }).run(),
-            disabled: false,
-            isActive: editor.isActive('heading', { level: 2 }),
-        },
-        {
-            icon: <IconLetterPSmall />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().setParagraph().run(),
-            disabled: false,
-            isActive: editor.isActive('paragraph'),
-        },
-        {
-            icon: <IconList />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().toggleBulletList().run(),
-            disabled: false,
-            isActive: editor.isActive('bulletList'),
-        },
-        {
-            icon: <IconListNumbers />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().toggleOrderedList().run(),
-            disabled: false,
-            isActive: editor.isActive('orderedList'),
-        },
-        {
-            icon: <IconClearFormatting />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().unsetAllMarks().clearNodes().run(),
-            disabled: false,
-            isActive: false,
-        },
-        {
-            icon: <IconArrowBackUp />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().undo().run(),
-            disabled: !editor.can().undo(),
-            isActive: false,
-        },
-        {
-            icon: <IconArrowForwardUp />,
-            tooltip: t('clearFormatting'),
-            onClick: () => editor.chain().focus().redo().run(),
-            disabled: !editor.can().redo(),
-            isActive: false,
-        },
-    ];
+    const buttons = getTextEditorButtons(editor, t);
 
     return (
         <div className='flex flex-col border-b pb-1 rounded-t bg-gray-100 hover:bg-gray-200 hover:bg-opacity-55 border-gray-500'>

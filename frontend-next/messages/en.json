@@ -29,10 +29,16 @@
     "italics": "Italics",
     "underlined": "Underlined",
     "list": "Bulleted list",
+    "orderedList": "Ordered list",
     "clearFormatting": "Clear formatting",
     "youtube": "Add video from YouTube",
     "file": "Upload file",
     "link": "Add link",
+    "heading1": "Heading 1",
+    "heading2": "Heading 2",
+    "paragraph": "Paragraph",
+    "undo": "Undo",
+    "redo": "Redo",
     "modals": {
       "youtube": {
         "enter": "Enter video URL",

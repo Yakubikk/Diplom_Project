@@ -8,17 +8,20 @@ import { Button, Checkbox, TextField, Typography } from '@/components';
 import { cn } from '@/lib/utils';
 import { type RegisterPayload } from '@/types';
 import { openPrivacyPolicyPdf } from '@/utils/pdfHelper';
-import { onSubmitForm } from './register-form.helper';
+import {getUserOnSubmit, onSubmitForm} from './register-form.helper';
 
 export interface RegisterFormProps {
     isModal?: boolean;
 }
 
 export interface RegisterFormValues {
-    fullname: string;
+    firstname: string;
+    lastname: string;
+    patronymic: string;
     email: string;
     password: string;
     confirmPassword: string;
+    imageAvatar: string;
     isProfessor: boolean;
     agree: boolean;
 }
@@ -31,10 +34,13 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
     const methods = useForm<RegisterFormValues>({
         criteriaMode: 'all',
         defaultValues: {
-            fullname: '',
+            firstname: '',
+            lastname: '',
+            patronymic: '',
             email: '',
             password: '',
             confirmPassword: '',
+            imageAvatar: '',
             isProfessor: false,
             agree: false,
         },
@@ -54,6 +60,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
 
         if (response) {
             toast.success(tr('success'));
+            console.log(response.id);
+            const userData = await getUserOnSubmit(response.id);
+            console.log(userData);
         } else {
             toast.error(tr('failure'));
         }
@@ -72,9 +81,15 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
                 <div className='mt-10 flex flex-col gap-10 desktop:mt-2'>
                     <TextField
                         clearable
-                        {...register('fullname', { required: tf('requiredFieldError') })}
+                        {...register('firstname', { required: tf('requiredFieldError') })}
                         placeholder={tr('fullnamePlaceholder')}
-                        error={errors.fullname}
+                        error={errors.firstname}
+                    />
+                    <TextField
+                        clearable
+                        {...register('lastname', { required: tf('requiredFieldError') })}
+                        placeholder={tr('fullnamePlaceholder')}
+                        error={errors.lastname}
                     />
                     <TextField
                         clearable

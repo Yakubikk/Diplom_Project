@@ -17,8 +17,8 @@ const Refer: React.FC = () => {
         setFiles(prevState => [...prevState, { youtube: file }]);
     }, []);
 
-    const handleUploadFile = useCallback((files: File[]) => {
-        setFiles(prevState => [...prevState, { uploaded: files }]);
+    const handleUploadFile = useCallback((file: File[]) => {
+        setFiles(prevState => [...prevState, { uploaded: file }]);
     }, []);
 
     const handleAddLink = useCallback((link: string) => {

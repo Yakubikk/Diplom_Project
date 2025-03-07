@@ -1,12 +1,25 @@
+export interface User {
+    id: string;
+    email: string;
+    firstname: string;
+    lastname: string;
+    patronymic: string;
+    imageAvatar: string;
+    isProfessor: boolean;
+}
+
 export interface RegisterPayload {
-  fullname: string;
+  firstname: string;
+  lastname: string;
+  patronymic: string;
   email: string;
   password: string;
+  imageAvatar: string;
   isProfessor: boolean;
 }
 
 export interface RegisterResponse {
-  message: boolean;
+  id: string;
 }
 
 export interface LoginPayload {

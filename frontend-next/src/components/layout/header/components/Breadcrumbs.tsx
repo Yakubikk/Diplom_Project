@@ -51,7 +51,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ translations }) => {
 
     return (
         <Breadcrumb>
-            <BreadcrumbList>
+            <BreadcrumbList className='-ml-2'>
                 {pathSegments.map((segment, index) => (
                     <React.Fragment key={segment.path}>
                         {index === 0 && <BreadcrumbSeparator />}
