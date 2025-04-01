@@ -7,31 +7,37 @@ const CardsBlock: React.FC = () => {
             <ClassCard
                 id={"12345"}
                 title={"Course 1"}
-                teacherId={""}
+                description={"Hello world"}
+                creator={''}
+                teacherIds={['']}
                 createdAt={new Date()}
             />
             <ClassCard
                 id={"1"}
                 title={"Course 2"}
-                teacherId={""}
+                creator={''}
+                teacherIds={['']}
                 createdAt={new Date()}
             />
             <ClassCard
                 id={"2"}
                 title={"Course 3"}
-                teacherId={""}
+                creator={''}
+                teacherIds={['']}
                 createdAt={new Date()}
             />
             <ClassCard
                 id={"3"}
                 title={"Course 4"}
-                teacherId={""}
+                creator={''}
+                teacherIds={['']}
                 createdAt={new Date()}
             />
             <ClassCard
                 id={"4"}
                 title={"Course 5"}
-                teacherId={""}
+                creator={''}
+                teacherIds={['']}
                 createdAt={new Date()}
             />
         </div>

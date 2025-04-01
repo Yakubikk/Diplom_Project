@@ -4,15 +4,19 @@ import {ApiService} from '@/services/api';
 import {type RegisterPayload} from '@/types';
 
 export const onSubmitForm = async (
-    values: RegisterPayload & { agree: boolean }
+    values: RegisterPayload & { terms: boolean }
 ) => {
+    if (!values.terms) {
+        return null;
+    }
     return await ApiService.postRegister({
         firstname: values.firstname,
         lastname: values.lastname,
         patronymic: values.patronymic,
         email: values.email,
         password: values.password,
-        imageAvatar: values.imageAvatar,
+        tel: values.tel,
+        terms: values.terms,
         isProfessor: values.isProfessor,
     });
 };

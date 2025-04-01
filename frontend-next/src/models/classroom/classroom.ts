@@ -3,7 +3,8 @@ export interface Classroom {
     title: string;
     description?: string;
     // ID преподавателя
-    teacherId: string;
+    creator: string;
+    teacherIds: string[];
     // Список ID студентов
     studentIds?: string[];
     createdAt: Date;

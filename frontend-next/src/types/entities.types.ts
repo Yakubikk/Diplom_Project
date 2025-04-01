@@ -14,7 +14,8 @@ export interface RegisterPayload {
   patronymic: string;
   email: string;
   password: string;
-  imageAvatar: string;
+  tel?: string;
+  terms: boolean;
   isProfessor: boolean;
 }
 

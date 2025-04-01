@@ -23,8 +23,8 @@
   },
   "TextEditor": {
     "refer": "Refer to the course",
-    "cancel": "Cancel",
-    "publish": "Publish",
+    "cancel": "Cancel (ctrl + z)",
+    "publish": "Publish (ctrl + y)",
     "bold": "Bold",
     "italics": "Italics",
     "underlined": "Underlined",

@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { type RegisterPayload } from '@/types';
 import { openPrivacyPolicyPdf } from '@/utils/pdfHelper';
 import {getUserOnSubmit, onSubmitForm} from './register-form.helper';
+import {useRouter} from "next/navigation";
 
 export interface RegisterFormProps {
     isModal?: boolean;
@@ -21,15 +22,16 @@ export interface RegisterFormValues {
     email: string;
     password: string;
     confirmPassword: string;
-    imageAvatar: string;
+    tel?: string;
     isProfessor: boolean;
-    agree: boolean;
+    terms: boolean;
 }
 
 const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
     const ta = useTranslations('Authentication');
     const tr = useTranslations('RegisterForm');
     const tf = useTranslations('Form');
+    const router = useRouter();
 
     const methods = useForm<RegisterFormValues>({
         criteriaMode: 'all',
@@ -40,9 +42,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
             email: '',
             password: '',
             confirmPassword: '',
-            imageAvatar: '',
             isProfessor: false,
-            agree: false,
+            terms: false,
         },
     });
 
@@ -55,18 +56,18 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
 
     const password = watch('password');
 
-    const onSubmit = async (values: RegisterPayload & { agree: boolean }) => {
+    const onSubmit = async (values: RegisterPayload & { terms: boolean }) => {
         const response = await onSubmitForm(values);
 
         if (response) {
             toast.success(tr('success'));
-            console.log(response.id);
-            const userData = await getUserOnSubmit(response.id);
-            console.log(userData);
+            router.replace('/login');
         } else {
             toast.error(tr('failure'));
         }
     };
+
+    const phoneRegex = /^(?:\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}|\+7 \(\d{3}\) \d{3}-\d{2}-\d{2})$/;
 
     return (
         <FormProvider {...methods}>
@@ -122,6 +123,17 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
                         error={errors.confirmPassword}
                         placeholder={tr('confirmPasswordPlaceholder')}
                     />
+                    <TextField
+                        type='phone'
+                        {...register('tel', {
+                            required: tf('requiredFieldError'),
+                            pattern: {
+                                value: phoneRegex,
+                                message: tf('invalidPhoneError'),
+                            },
+                        })}
+                        error={errors.tel}
+                    />
                 </div>
                 <div className='flex flex-col gap-4'>
                     <div className='flex items-center gap-3'>
@@ -136,7 +148,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
                     </div>
                     <div className='flex items-center gap-3'>
                         <Checkbox
-                            {...register('agree', {
+                            {...register('terms', {
                                 required: true,
                             })}
                         />

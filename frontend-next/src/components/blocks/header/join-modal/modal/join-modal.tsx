@@ -2,7 +2,7 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components';
 import useJoinModal from '@/hooks/useJoinModal';
-import { ContactUsForm } from './join-form';
+import { JoinCLassForm } from './join-form';
 
 export const JoinModal = () => {
     const joinModal = useJoinModal();
@@ -16,7 +16,7 @@ export const JoinModal = () => {
                 <DialogHeader>
                     <DialogTitle className='mb-2 tablet:mb-5'>Contact</DialogTitle>
                 </DialogHeader>
-                <ContactUsForm isModal />
+                <JoinCLassForm isModal />
             </DialogContent>
         </Dialog>
     );
