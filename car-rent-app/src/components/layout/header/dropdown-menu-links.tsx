@@ -13,28 +13,28 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
     {
-        title: 'Home',
+        title: 'Главная',
         href: '/',
     },
     {
-        title: 'Products',
+        title: 'Продукты',
         href: '/products',
         subItems: [
-            { title: 'All Products', href: '/products/all' },
-            { title: 'New Arrivals', href: '/products/new' },
-            { title: 'Best Sellers', href: '/products/best' },
+            { title: 'Все продукты', href: '/products/all' },
+            { title: 'Новинки', href: '/products/new' },
+            { title: 'Бестселлеры', href: '/products/best' },
         ],
     },
     {
-        title: 'Services',
+        title: 'Услуги',
         href: '/services',
         subItems: [
-            { title: 'Consulting', href: '/services/consulting' },
-            { title: 'Support', href: '/services/support' },
+            { title: 'Консалтинг', href: '/services/consulting' },
+            { title: 'Поддержка', href: '/services/support' },
         ],
     },
     {
-        title: 'About',
+        title: 'О нас',
         href: '/about',
     },
 ];

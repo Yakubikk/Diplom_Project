@@ -6,6 +6,7 @@ import {Box, Drawer, Backdrop, styled, Typography, Fab, Stack, Button} from '@mu
 import {Logo} from "@/components";
 import {IconBrandFacebookFilled, IconBrandInstagram, IconBrandTelegram, IconX} from "@tabler/icons-react";
 import Link from "next/link";
+import SubscribeForm from './subscribe-form';
 
 const SidebarDrawer = styled(Drawer)(({ theme }) => ({
     '& .MuiDrawer-paper': {
@@ -32,8 +33,8 @@ const SidebarContent = styled(Box)(({ theme }) => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(4),
-    padding: theme.spacing(5),
+    justifyContent: 'space-between',
+    padding: theme.spacing(7, 5),
 }));
 
 const socialItems = [
@@ -104,6 +105,65 @@ const Sidebar: React.FC = () => {
                         </Stack>
                     </Stack>
                     <div className='w-full h-[1px] bg-gray-300'/>
+                    <Stack
+                        direction='row'
+                        spacing={4}
+                        alignItems='center'
+                    >
+                        <Typography
+                            sx={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
+                            variant='h5'
+                            fontWeight='bold'
+                        >
+                            Контакты
+                        </Typography>
+                        <div className='w-[1px] h-full bg-gray-300'/>
+                        <Stack justifyContent='space-between' height='100%'>
+                            <Typography>
+                                Почта: <Link href='mailto:mail@example.com'
+                                             className='hover:text-blue-600 transition-colors'>mail@example.com</Link>
+                            </Typography>
+                            <Typography>
+                                Телефон: <Link href='tel:+375 (29) 123-45-67'
+                                               className='hover:text-blue-600 transition-colors'>+375 (29)
+                                123-45-67</Link>
+                            </Typography>
+                            <Typography>
+                                Адрес: г. Минск, ул. Пушкина, д. 1
+                            </Typography>
+                        </Stack>
+                    </Stack>
+                    <div className='w-full h-[1px] bg-gray-300'/>
+                    <Stack
+                        direction='row'
+                        spacing={4}
+                        alignItems='center'
+                    >
+                        <Typography
+                            sx={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
+                            variant='h5'
+                            fontWeight='bold'
+                        >
+                            Карьера
+                        </Typography>
+                        <div className='w-[1px] h-full bg-gray-300'/>
+                        <Stack justifyContent='space-between' height='100%'>
+                            <Typography>
+                                Почта: <Link href='mailto:mail@example.com'
+                                             className='hover:text-blue-600 transition-colors'>mail@example.com</Link>
+                            </Typography>
+                            <Typography>
+                                Телефон: <Link href='tel:+375 (29) 123-45-67'
+                                               className='hover:text-blue-600 transition-colors'>+375 (29)
+                                123-45-67</Link>
+                            </Typography>
+                            <Typography>
+                                Доступные часы: пн-пт с 9:00 до 18:00
+                            </Typography>
+                        </Stack>
+                    </Stack>
+                    <div className='w-full h-[1px] bg-gray-300'/>
+                    <SubscribeForm />
                 </SidebarContent>
             </SidebarDrawer>
         </>
