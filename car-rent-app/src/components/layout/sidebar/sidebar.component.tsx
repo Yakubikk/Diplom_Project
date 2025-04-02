@@ -46,25 +46,66 @@ const socialItems = [
     { icon: <IconBrandTelegram width={20} height={20} />, href: '/' }
 ];
 
+const contactSections = [
+    {
+        title: 'Контакты',
+        items: [
+            { text: 'Почта:', content: 'mail@example.com', href: 'mailto:mail@example.com' },
+            { text: 'Телефон:', content: '+375 (29) 123-45-67', href: 'tel:+375 (29) 123-45-67' },
+            { text: 'Адрес:', content: 'г. Минск, ул. Пушкинская, 1' }
+        ]
+    },
+    {
+        title: 'Карьера',
+        items: [
+            { text: 'Почта:', content: 'mail@example.com', href: 'mailto:mail@example.com' },
+            { text: 'Телефон:', content: '+375 (29) 123-45-67', href: 'tel:+375 (29) 123-45-67' },
+            { text: 'Доступные часы:', content: 'пн-пт с 9:00 до 18:00' }
+        ]
+    }
+];
+
 const Sidebar: React.FC = () => {
     const { open, setClose } = useSidebar();
 
+    const renderContactSection = (section: typeof contactSections[0], index: number) => (
+        <React.Fragment key={index}>
+            <Stack direction='row' spacing={4} alignItems='center'>
+                <Typography
+                    sx={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
+                    variant='h5'
+                    fontWeight='bold'
+                >
+                    {section.title}
+                </Typography>
+                <div className='w-[1px] h-full bg-gray-300'/>
+                <Stack justifyContent='space-between' height='100%'>
+                    {section.items.map((item, itemIndex) => (
+                        <Typography key={itemIndex}>
+                            {item.text} {item.href ? (
+                            <Link href={item.href} className='hover:text-blue-600 transition-colors'>
+                                {item.content}
+                            </Link>
+                        ) : (
+                            item.content
+                        )}
+                        </Typography>
+                    ))}
+                </Stack>
+            </Stack>
+            {index < contactSections.length - 1 && <div className='w-full h-[1px] bg-gray-300'/>}
+        </React.Fragment>
+    );
+
     return (
         <>
-            <BlurredBackdrop
-                open={open}
-                onClick={setClose}
-            />
+            <BlurredBackdrop open={open} onClick={setClose} />
 
-            <SidebarDrawer
-                variant="temporary"
-                anchor="right"
-                open={open}
-                onClose={setClose}
-            >
+            <SidebarDrawer variant="temporary" anchor="right" open={open} onClose={setClose}>
                 <SidebarContent>
                     <Fab
                         sx={{position: 'absolute', top: 16, right: 16}}
+                        color='primary'
                         size='small'
                         onClick={setClose}
                     >
@@ -75,27 +116,17 @@ const Sidebar: React.FC = () => {
                         Quisque imperdiet dignissim enim dictum finibus. Sed consectetutr convallis enim eget laoreet.
                         Aenean vitae nisl mollis, porta risus vel Etiam ac suscipit eros.
                     </Typography>
-                    <Stack
-                        width='95%'
-                        direction='row'
-                        justifyContent='space-between'
-                        alignItems='center'
-                    >
-                        <Button
-                            variant='contained'
-                            color='primary'
-                            size='large'
-                        >
+                    <Stack width='95%' direction='row' justifyContent='space-between' alignItems='center'>
+                        <Button variant='contained' color='primary' size='large'>
                             История
                         </Button>
-                        <Stack
-                            direction='row'
-                            spacing={1}
-                        >
+                        <Stack direction='row' spacing={1}>
                             <Stack direction='row' spacing={1} alignItems='center'>
                                 {socialItems.map((item, index) => (
                                     <Link
-                                        href={item.href} key={index} passHref
+                                        href={item.href}
+                                        key={index}
+                                        passHref
                                         className='text-white bg-black hover:bg-blue-500 transition-colors rounded-full p-1.5'
                                     >
                                         {item.icon}
@@ -105,63 +136,7 @@ const Sidebar: React.FC = () => {
                         </Stack>
                     </Stack>
                     <div className='w-full h-[1px] bg-gray-300'/>
-                    <Stack
-                        direction='row'
-                        spacing={4}
-                        alignItems='center'
-                    >
-                        <Typography
-                            sx={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
-                            variant='h5'
-                            fontWeight='bold'
-                        >
-                            Контакты
-                        </Typography>
-                        <div className='w-[1px] h-full bg-gray-300'/>
-                        <Stack justifyContent='space-between' height='100%'>
-                            <Typography>
-                                Почта: <Link href='mailto:mail@example.com'
-                                             className='hover:text-blue-600 transition-colors'>mail@example.com</Link>
-                            </Typography>
-                            <Typography>
-                                Телефон: <Link href='tel:+375 (29) 123-45-67'
-                                               className='hover:text-blue-600 transition-colors'>+375 (29)
-                                123-45-67</Link>
-                            </Typography>
-                            <Typography>
-                                Адрес: г. Минск, ул. Пушкина, д. 1
-                            </Typography>
-                        </Stack>
-                    </Stack>
-                    <div className='w-full h-[1px] bg-gray-300'/>
-                    <Stack
-                        direction='row'
-                        spacing={4}
-                        alignItems='center'
-                    >
-                        <Typography
-                            sx={{writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}
-                            variant='h5'
-                            fontWeight='bold'
-                        >
-                            Карьера
-                        </Typography>
-                        <div className='w-[1px] h-full bg-gray-300'/>
-                        <Stack justifyContent='space-between' height='100%'>
-                            <Typography>
-                                Почта: <Link href='mailto:mail@example.com'
-                                             className='hover:text-blue-600 transition-colors'>mail@example.com</Link>
-                            </Typography>
-                            <Typography>
-                                Телефон: <Link href='tel:+375 (29) 123-45-67'
-                                               className='hover:text-blue-600 transition-colors'>+375 (29)
-                                123-45-67</Link>
-                            </Typography>
-                            <Typography>
-                                Доступные часы: пн-пт с 9:00 до 18:00
-                            </Typography>
-                        </Stack>
-                    </Stack>
+                    {contactSections.map(renderContactSection)}
                     <div className='w-full h-[1px] bg-gray-300'/>
                     <SubscribeForm />
                 </SidebarContent>

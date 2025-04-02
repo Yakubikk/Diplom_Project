@@ -37,14 +37,13 @@ const socialItems = [
 const UpperHeader: React.FC = () => {
     return (
         <Box className='flex items-center justify-between py-3 pl-10 pr-5'>
-            {/* Контактная информация */}
             <Stack
                 direction='row'
                 divider={<Divider orientation='vertical' flexItem className='bg-black' />}
                 spacing={2}
             >
                 {contactItems.map((item, index) => (
-                    <Link href={item.href} key={index} passHref>
+                    <Link href={item.href} key={index}>
                         <Stack
                             direction='row'
                             alignItems='center'
@@ -60,16 +59,14 @@ const UpperHeader: React.FC = () => {
                 ))}
             </Stack>
 
-            {/* Навигация и соцсети */}
             <Stack direction='row' spacing={4} alignItems='center'>
-                {/* Навигационные ссылки */}
                 <Stack
                     direction='row'
                     divider={<Divider orientation='vertical' flexItem className='bg-black' />}
                     spacing={2}
                 >
                     {navItems.map((item, index) => (
-                        <Link href={item.href} key={index} passHref>
+                        <Link href={item.href} key={index}>
                             <Typography className='hover:text-blue-600 transition-colors'>
                                 {item.text}
                             </Typography>
@@ -77,11 +74,10 @@ const UpperHeader: React.FC = () => {
                     ))}
                 </Stack>
 
-                {/* Социальные сети */}
                 <Stack direction='row' spacing={1} alignItems='center'>
                     {socialItems.map((item, index) => (
                         <Link
-                            href={item.href} key={index} passHref
+                            href={item.href} key={index}
                             className='text-white bg-black hover:bg-blue-600 transition-colors rounded-full p-1.5'
                         >
                             {item.icon}
