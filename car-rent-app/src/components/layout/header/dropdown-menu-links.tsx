@@ -17,10 +17,10 @@ const menuItems: MenuItem[] = [
         href: '/',
     },
     {
-        title: 'Продукты',
+        title: 'Автомобили',
         href: '/products',
         subItems: [
-            { title: 'Все продукты', href: '/products/all' },
+            { title: 'Все автомобили', href: '/products/all' },
             { title: 'Новинки', href: '/products/new' },
             { title: 'Бестселлеры', href: '/products/best' },
         ],

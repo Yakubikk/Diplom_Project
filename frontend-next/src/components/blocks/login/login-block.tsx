@@ -1,7 +1,7 @@
 import React from 'react';
-import {LoginForm, LoginPhoneForm, Tabs, TabsContent, TabsList, TabsTrigger, Typography} from '@/components';
+import { LoginForm, LoginPhoneForm, Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@/components';
 import Link from "next/link";
-import {useTranslations} from "next-intl";
+import { useTranslations } from "next-intl";
 
 const LoginBlock = () => {
     const t = useTranslations('Authentication');

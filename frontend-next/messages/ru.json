@@ -98,8 +98,11 @@
     "noAccount": "У вас нет учетной записи?",
     "login": "Авторизация",
     "register": "Регистрация",
+    "rememberMe": "Запомнить меня",
     "loginButton": "Авторизоваться",
+    "enterCode": "Введите код",
     "sendCode": "Отправить код",
+    "phoneDescription": "На этот номер будет отправлен код подтверждения",
     "registerButton": "Зарегистрироваться",
     "byEmail": "По e-mail",
     "byPhone": "По номеру телефона"
@@ -109,15 +112,24 @@
     "invalidEmailError": "Пожалуйста, введите корректный email",
     "invalidPhoneError": "Пожалуйста, введите корректный номер телефона",
     "emailPlaceholder": "Email",
-    "passwordPlaceholder": "Пароль"
+    "passwordPlaceholder": "Пароль",
+    "forgotPassword": "Забыли пароль?"
   },
   "LoginForm": {
     "success": "Вход выполнен успешно!",
     "failure": "Не удалось войти. Попробуйте еще раз."
   },
+  "LoginCodeForm": {
+    "description": "На номер {phone} отправлен код подтверждения",
+    "error": "Код должен быть введён полностью",
+    "submit": "Подтвердить"
+  },
   "RegisterForm": {
     "passwordMismatchError": "Пароли не совпадают",
     "fullnamePlaceholder": "ФИО",
+    "firstnamePlaceholder": "Имя",
+    "lastnamePlaceholder": "Фамилия",
+    "patronymicPlaceholder": "Отчество",
     "confirmPasswordPlaceholder": "Подтвердите пароль",
     "isProfessor": "Я преподаватель",
     "agreeText": "Я согласен с",

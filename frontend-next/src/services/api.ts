@@ -11,7 +11,9 @@ import {
   type RegisterResponse,
   LoginPayload,
   LoginResponse,
-  LoginPhonePayload, User,
+  LoginPhonePayload, User, LoginPhoneResponse,
+  LoginCodePayload,
+  LoginCodeResponse,
 } from '@/types';
 import { fakeEndpoints } from './fakeEndpoints';
 
@@ -84,9 +86,17 @@ const ApiService = {
   },
   postPhoneLogin: async (
       formData: LoginPhonePayload
-  ): Promise<LoginResponse | undefined> => {
-    return getResponseData<LoginResponse>(
-        await api.post(`${process.env.API_URL}phoneLogin`, formData)
+  ): Promise<LoginPhoneResponse | undefined> => {
+    console.log(formData);
+    return getResponseData<LoginPhoneResponse>(
+        await api.post(`${process.env.NEXT_PUBLIC_API_URL}users/sign-in-tel`, formData)
+    );
+  },
+  postCodeLogin: async (
+      formData: LoginCodePayload
+  ): Promise<LoginCodeResponse | undefined> => {
+    return getResponseData<LoginCodeResponse>(
+        await api.post(`${process.env.NEXT_PUBLIC_API_URL}users/tel-check`, formData)
     );
   },
   getUserDataById: async (

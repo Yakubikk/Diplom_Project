@@ -4,22 +4,19 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Button } from '@/components';
+import { Button, Checkbox } from '@/components';
 import { TextField } from '@/components/inputs/text-field';
 import { cn } from '@/lib/utils';
 import { type LoginPayload } from '@/types';
 import { onSubmitForm } from './login-form.helper';
 
-export interface LoginFormProps {
-    isModal?: boolean;
-}
-
 export interface LoginFormValues {
     email: string;
     password: string;
+    rememberMe: boolean;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ isModal }) => {
+const LoginForm: React.FC = () => {
     const ta = useTranslations('Authentication');
     const tf = useTranslations('Form');
     const tl = useTranslations('LoginForm');
@@ -29,6 +26,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isModal }) => {
         defaultValues: {
             email: '',
             password: '',
+            rememberMe: false,
         },
     });
 
@@ -53,8 +51,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ isModal }) => {
         <FormProvider {...methods}>
             <form
                 className={cn(
-                    'flex w-[400px] max-w-[400px] flex-col gap-10',
-                    isModal && 'max-tablet:gap-7'
+                    'flex w-[400px] max-w-[400px] flex-col gap-10'
                 )}
                 onSubmit={handleSubmit(onSubmit)}
                 autoComplete='off'
@@ -80,6 +77,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ isModal }) => {
                         error={errors.password}
                         placeholder={tf('passwordPlaceholder')}
                     />
+                    <Checkbox
+                    {...register('rememberMe')}
+                    label={ta('rememberMe')}
+                />
                 </div>
                 <Button
                     type='submit'

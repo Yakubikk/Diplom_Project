@@ -7,7 +7,7 @@ const RegisterBlock = () => {
     const t = useTranslations('Authentication');
 
     return (
-        <div className="flex flex-col h-full pt-32 pb-16 w-full items-center justify-between">
+        <div className="flex flex-col h-full w-full items-center justify-center gap-4">
             <Typography variant='h1Title'>
                 {t('registration')}
             </Typography>

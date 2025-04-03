@@ -2,7 +2,7 @@
 
 import React from "react";
 import {IconButton, Stack} from "@mui/material";
-import {IconShoppingBag, IconUser} from "@tabler/icons-react";
+import {IconUser} from "@tabler/icons-react";
 import {useSidebar} from "@/store";
 import './toggle.scss';
 
@@ -12,9 +12,6 @@ const SidebarToggle: React.FC = () => {
         <Stack direction='row' height='100%' alignItems='center'>
             <IconButton size='large'>
                 <IconUser />
-            </IconButton>
-            <IconButton size='large'>
-                <IconShoppingBag />
             </IconButton>
             <div className="parent" onClick={toggle}>
                 <div className="button">

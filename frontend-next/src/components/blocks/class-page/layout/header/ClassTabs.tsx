@@ -3,24 +3,38 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components";
 import Link from "next/link";
 import React from "react";
-import { useParams, usePathname } from 'next/navigation';
-import {useTranslations} from "next-intl";
+import { useSearchParams, usePathname } from 'next/navigation';
+import { useTranslations } from "next-intl";
 
 const ClassTabs = () => {
-    const params = useParams();
+    const params = useSearchParams();
+    const classId = params.get('classId');
     const pathname = usePathname();
-    const { id } = params;
     const t = useTranslations('Class.navbar');
 
     const tabs = [
-        { value: 'feed', label: t('feed'), href: `/class/${id}` },
-        { value: 'tasks', label: t('tasks'), href: `/class/${id}/tasks` },
-        { value: 'users', label: t('users'), href: `/class/${id}/users` },
+        { 
+            value: 'feed', 
+            label: t('feed'), 
+            href: `/class?classId=${classId}`
+        },
+        { 
+            value: 'tasks', 
+            label: t('tasks'), 
+            href: `/class/tasks?classId=${classId}`
+        },
+        { 
+            value: 'users', 
+            label: t('users'), 
+            href: `/class/users?classId=${classId}`
+        },
     ];
 
-    const activeTab = tabs.find((tab) =>
-        tab.href === pathname
-    )?.value || 'feed';
+    const activeTab = tabs.find((tab) => {
+        const currentPath = pathname.split('?')[0];
+        const tabPath = tab.href.split('?')[0];
+        return currentPath === tabPath;
+    })?.value || 'feed';
 
     return (
         <Tabs defaultValue={activeTab} value={activeTab}>

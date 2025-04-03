@@ -3,29 +3,24 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
-import { Button } from '@/components';
-import { TextField } from '@/components/inputs/text-field';
+import { Button, Typography } from '@/components';
+import { TextField } from '@/components';
 import useJoinModal from '@/hooks/useJoinModal';
 import { cn } from '@/lib/utils';
 import { ApiService } from '@/services/api';
-import { type RegisterPayload } from '@/types';
-
-export interface JoinCLassFormProps {
-    isModal?: boolean;
-}
+import { type JoinClassPayload } from '@/types';
 
 export interface JoinCLassFormValues {
     classId: string;
 }
 
-const JoinCLassForm: React.FC<JoinCLassFormProps> = ({ isModal }) => {
-    const t = useTranslations('JoinCLassForm');
+const JoinCLassForm: React.FC = () => {
     const joinModal = useJoinModal();
 
     const methods = useForm<JoinCLassFormValues>({
         criteriaMode: 'all',
         defaultValues: {
-
+            classId: '',
         },
     });
 
@@ -35,7 +30,7 @@ const JoinCLassForm: React.FC<JoinCLassFormProps> = ({ isModal }) => {
         formState: { errors },
     } = methods;
 
-    const onSubmit = async (values: RegisterPayload) => {
+    const onSubmit = async (values: JoinClassPayload) => {
         console.log('values:', values);
 
         joinModal.onClose();
@@ -45,27 +40,33 @@ const JoinCLassForm: React.FC<JoinCLassFormProps> = ({ isModal }) => {
         <FormProvider {...methods}>
             <form
                 className={cn(
-                    'flex w-full max-w-[400px] flex-col gap-10 overflow-hidden overflow-y-auto',
-                    isModal && 'max-tablet:gap-7'
+                    'flex w-full flex-col gap-10 p-0'
                 )}
                 onSubmit={handleSubmit(onSubmit)}
                 autoComplete='off'
             >
-                <div className='mt-10 flex flex-col gap-10 desktop:mt-2'>
-
-                </div>
-                <div className='flex items-center gap-3'>
-
+                <div className='flex flex-col border border-gray-300 rounded-md p-6'>
+                    <Typography variant='bodySmallBold'>Class ID</Typography>
+                    <Typography variant='bodySmall' className='mb-2'>
+                        {'Введите код курса (его можно получить у преподавателя).'}
+                    </Typography>
+                    <TextField
+                        {...register('classId', {
+                            required: 'Class ID is required',
+                        })}
+                        placeholder='Class ID'
+                        error={errors.classId}
+                        className='w-2/3'
+                    />
                 </div>
                 <Button
                     size='lg'
                     className={cn(
-                        'w-full max-w-[218px] self-center desktop:self-start',
-                        isModal ? 'desktop:self-center' : 'desktop:self-start'
+                        'w-full self-center desktop:self-start',
                     )}
                     type='submit'
                 >
-                    {t('sendButton')}
+                    Join
                 </Button>
             </form>
         </FormProvider>

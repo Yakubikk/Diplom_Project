@@ -11,7 +11,7 @@ const ClassCard: React.FC<Classroom> = (classroom) => {
     return (
         <Link
             className='flex flex-col w-full h-fit rounded-lg hover:cursor-pointer hover:shadow-lg'
-            href={`/class/${classroom.id}`}
+            href={`/class?classId=${classroom.id}`}
         >
             <div className={cn(
                 'w-full h-24 bg-cover bg-center rounded-t-lg flex flex-col text-white',

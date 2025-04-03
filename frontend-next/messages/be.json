@@ -98,8 +98,11 @@
     "noAccount": "У вас няма акаўнта?",
     "login": "Аўтарызацыя",
     "register": "Рэгістрацыя",
+    "rememberMe": "Запомніць меня",
     "loginButton": "Аўтарызавацца",
+    "enterCode": "Увядзіце код",
     "sendCode": "Адправіць код",
+    "phoneDescription": "На гэты нумар будзе адпраўлены код пацверджання",
     "registerButton": "Зарэгістравацца",
     "byEmail": "Па e-mail",
     "byPhone": "Па нумары тэлефона"
@@ -115,9 +118,17 @@
     "success": "Уваход паспяховы!",
     "failure": "Не атрымалася ўвайсці. Калі ласка, паспрабуйце яшчэ раз."
   },
+  "LoginCodeForm": {
+    "description": "На нумар {phone} дасланы код пацверджання",
+    "error": "Код павінен быць уведзены цалкам",
+    "submit": "Пацвердзіць"
+  },
   "RegisterForm": {
     "passwordMismatchError": "Паролі не супадаюць",
     "fullnamePlaceholder": "Поўнае імя",
+    "firstnamePlaceholder": "Імя",
+    "lastnamePlaceholder": "Фамілія",
+    "patronymicPlaceholder": "Імя па бацьку",
     "confirmPasswordPlaceholder": "Пацвердзіце пароль",
     "isProfessor": "Я выкладчык",
     "agreeText": "Я згодзен з",

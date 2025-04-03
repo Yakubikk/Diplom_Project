@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import {AccountAvatar, TextEditor, Button, AddedFile, YoutubeFile} from '@/components';

@@ -49,6 +49,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     (
         {
             className,
+            autoFocus,
             readOnly,
             size,
             variant,
@@ -133,7 +134,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                         {type === 'phone' && (
                             <IconButton
                                 type="button"
-                                variant="text"
+                                variant="outlined"
                                 onClick={togglePhoneMask}
                                 className="mr-2"
                                 shape='square'
@@ -172,6 +173,8 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                                     value={value || phoneMasks[phoneMask]}
                                     onChange={onChange}
                                     showMask
+                                    autoFocus={autoFocus}
+                                    autoComplete="off"
                                     disabled={disabled}
                                     data-disabled={Boolean(disabled).toString()}
                                     data-error={Boolean(error).toString()}
@@ -193,6 +196,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                                     onChange={onChange}
                                     type={passwordVisible ? 'text' : type}
                                     disabled={disabled}
+                                    autoFocus={autoFocus}
                                     autoComplete="off"
                                     data-disabled={Boolean(disabled).toString()}
                                     data-error={Boolean(error).toString()}
@@ -279,7 +283,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                                     })
                                 )}
                             />
-                            {helpText && (
+                            {helpText && !error && (
                                 <span
                                     className={cn(
                                         'absolute left-0 right-0 top-full mt-1 flex items-center pl-[6px] text-mobil'

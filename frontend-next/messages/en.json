@@ -102,8 +102,11 @@
     "noAccount": "Don't have an account?",
     "login": "Login",
     "register": "Register",
+    "rememberMe": "Remember me",
     "loginButton": "Login",
+    "enterCode": "Enter code",
     "sendCode": "Send code",
+    "phoneDescription": "Enter your phone number to receive a code",
     "registerButton": "Register",
     "byEmail": "By e-mail",
     "byPhone": "By phone number"
@@ -119,9 +122,17 @@
     "success": "Login successful!",
     "failure": "Login failed. Please try again."
   },
+  "LoginCodeForm": {
+    "description": "A confirmation code has been sent to number {phone}",
+    "error": "Code must be entered in full",
+    "submit": "Confirm"
+  },
   "RegisterForm": {
     "passwordMismatchError": "Passwords do not match",
     "fullnamePlaceholder": "Full Name",
+    "firstnamePlaceholder": "First Name",
+    "lastnamePlaceholder": "Last Name",
+    "patronymicPlaceholder": "Patronymic",
     "confirmPasswordPlaceholder": "Confirm Password",
     "isProfessor": "I am a teacher",
     "agreeText": "I agree with the",

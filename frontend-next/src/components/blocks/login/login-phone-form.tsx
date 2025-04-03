@@ -4,27 +4,30 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Button } from '@/components';
+import { Button, Checkbox } from '@/components';
 import { TextField } from '@/components/inputs/text-field';
 import { cn } from '@/lib/utils';
 import { type LoginPhonePayload } from '@/types';
 import { onSubmitPhoneForm } from './login-form.helper';
-
-export interface LoginPhoneFormProps {
-    isModal?: boolean;
-}
+import { useRouter } from 'next/navigation';
 
 export interface LoginPhoneFormValues {
     phone: string;
+    rememberMe: boolean;
 }
 
-const LoginPhoneForm: React.FC<LoginPhoneFormProps> = ({ isModal }) => {
+const LoginPhoneForm: React.FC = () => {
     const ta = useTranslations('Authentication');
     const tf = useTranslations('Form');
     const tl = useTranslations('LoginForm');
 
+    const router = useRouter();
+
     const methods = useForm<LoginPhoneFormValues>({
         criteriaMode: 'all',
+        defaultValues: {
+            rememberMe: false,
+        }
     });
 
     const {
@@ -37,7 +40,7 @@ const LoginPhoneForm: React.FC<LoginPhoneFormProps> = ({ isModal }) => {
         const response = await onSubmitPhoneForm(values);
 
         if (response) {
-            toast.success(tl('success'));
+            router.push(`/login/code?phone=${encodeURIComponent(values.phone)}`);
         } else {
             toast.error(tl('failure'));
         }
@@ -49,25 +52,27 @@ const LoginPhoneForm: React.FC<LoginPhoneFormProps> = ({ isModal }) => {
         <FormProvider {...methods}>
             <form
                 className={cn(
-                    'flex w-[400px] max-w-[400px] flex-col gap-10',
-                    isModal && 'max-tablet:gap-7'
+                    'flex w-[400px] max-w-[400px] flex-col gap-10'
                 )}
                 onSubmit={handleSubmit(onSubmit)}
                 autoComplete='off'
             >
-                <div className='mt-10 flex flex-col gap-10 desktop:mt-2'>
-                    <TextField
-                        type='phone'
-                        {...register('phone', {
-                            required: tf('requiredFieldError'),
-                            pattern: {
-                                value: phoneRegex,
-                                message: tf('invalidPhoneError'),
-                            },
-                        })}
-                        error={errors.phone}
-                    />
-                </div>
+                <TextField
+                    type='phone'
+                    helpText={ta('phoneDescription')}
+                    {...register('phone', {
+                        required: tf('requiredFieldError'),
+                        pattern: {
+                            value: phoneRegex,
+                            message: tf('invalidPhoneError'),
+                        },
+                    })}
+                    error={errors.phone}
+                />
+                <Checkbox
+                    {...register('rememberMe')}
+                    label={ta('rememberMe')}
+                />
                 <Button
                     type='submit'
                     ripple

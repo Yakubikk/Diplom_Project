@@ -33,7 +33,7 @@ const linksBlocks: LinksBlock[] = [
     {
         title: 'Информация',
         links: [
-            { href: '/', text: 'Забронировать тест-драйв' },
+            { href: '/', text: 'Забронировать авто' },
             { href: '/', text: 'Обслуживание' },
             { href: '/', text: 'Гарантия' },
             { href: '/', text: 'Помощь на дороге' },

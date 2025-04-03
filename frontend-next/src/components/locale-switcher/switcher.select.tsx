@@ -9,7 +9,8 @@ import {cn} from "@/lib/utils";
 const SwitcherSelect: React.FC<LocaleSwitcherTypes> = (
     {
         children,
-        defaultValue
+        defaultValue,
+        absolute
     }) => {
     const [isPending, startTransition] = useTransition();
 
@@ -24,7 +25,8 @@ const SwitcherSelect: React.FC<LocaleSwitcherTypes> = (
         <select
             className={cn(
                 'flex w-12 h-12 appearance-none pl-[11px] text-h3Title hover:cursor-pointer border border-gray-400 rounded-[.5rem] bg-transparent',
-                'hover:bg-gray-100'
+                'hover:bg-gray-100',
+                absolute && 'absolute top-2 right-2'
             )}
             defaultValue={defaultValue}
             disabled={isPending}

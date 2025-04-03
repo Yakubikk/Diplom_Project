@@ -8,8 +8,8 @@ import { Button, Checkbox, TextField, Typography } from '@/components';
 import { cn } from '@/lib/utils';
 import { type RegisterPayload } from '@/types';
 import { openPrivacyPolicyPdf } from '@/utils/pdfHelper';
-import {getUserOnSubmit, onSubmitForm} from './register-form.helper';
-import {useRouter} from "next/navigation";
+import { onSubmitForm } from './register-form.helper';
+import { useRouter } from "next/navigation";
 
 export interface RegisterFormProps {
     isModal?: boolean;
@@ -83,13 +83,13 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
                     <TextField
                         clearable
                         {...register('firstname', { required: tf('requiredFieldError') })}
-                        placeholder={tr('fullnamePlaceholder')}
+                        placeholder={tr('firstnamePlaceholder')}
                         error={errors.firstname}
                     />
                     <TextField
                         clearable
                         {...register('lastname', { required: tf('requiredFieldError') })}
-                        placeholder={tr('fullnamePlaceholder')}
+                        placeholder={tr('lastnamePlaceholder')}
                         error={errors.lastname}
                     />
                     <TextField
@@ -136,33 +136,36 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
                     />
                 </div>
                 <div className='flex flex-col gap-4'>
-                    <div className='flex items-center gap-3'>
-                        <Checkbox
-                            {...register('isProfessor', {
-                                required: false,
-                            })}
-                        />
-                        <Typography className='text-left text-bodySmall text-black/60 tablet:text-bodyMedium'>
-                            {tr('isProfessor')}
-                        </Typography>
-                    </div>
-                    <div className='flex items-center gap-3'>
-                        <Checkbox
-                            {...register('terms', {
-                                required: true,
-                            })}
-                        />
-                        <Typography className='text-left text-bodySmall text-black/60 tablet:text-bodyMedium'>
-                            {tr('agreeText') + ' '}
-                            <span
-                                onClick={openPrivacyPolicyPdf}
-                                className='hover:underline cursor-pointer transition-transform text-blue-600'
-                            >
-                            {tr('agreeLinkText')}
-                        </span>
-                            {' ' + tr('agreeContinuation')}
-                        </Typography>
-                    </div>
+                    <Checkbox
+                        {...register('isProfessor', {
+                            required: false,
+                        })}
+                        label={
+                            <Typography className='text-left text-bodySmall text-black/60 tablet:text-bodyMedium'>
+                                {tr('isProfessor')}
+                            </Typography>
+                        }
+                    />
+                    <Checkbox
+                        {...register('terms', {
+                            required: true,
+                        })}
+                        label={
+                            <Typography className='text-left text-bodySmall text-black/60 tablet:text-bodyMedium'>
+                                {tr('agreeText') + ' '}
+                                <span
+                                    onClick={(e) =>{
+                                        openPrivacyPolicyPdf();
+                                        e.preventDefault();
+                                    }}
+                                    className='hover:underline text-blue-600'
+                                >
+                                    {tr('agreeLinkText')}
+                                </span>
+                                {' ' + tr('agreeContinuation')}
+                            </Typography>
+                        }
+                    />
                 </div>
                 <Button
                     type='submit'
@@ -176,5 +179,5 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ isModal }) => {
     );
 };
 
-export {RegisterForm};
+export { RegisterForm };
 export default RegisterForm;

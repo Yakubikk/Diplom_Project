@@ -53,7 +53,7 @@ const Checkbox = React.forwardRef<
     return (
       <LabelRadix.Root
         className={cn(
-          'inline-flex select-none items-center gap-[11px] outline-none',
+          'inline-flex select-none items-center gap-[11px] outline-none w-fit cursor-pointer',
           disabled && 'text-black/45 pointer-events-none',
           size === 'sm' && 'text-body2 leading-body3'
         )}

@@ -33,5 +33,26 @@ export interface LoginPhonePayload {
 }
 
 export interface LoginResponse {
-  message: boolean;
+  id: string;
+}
+
+export interface LoginPhoneResponse {
+  code: string;
+}
+
+export interface LoginCodePayload {
+  code: string;
+  phone: string;
+}
+
+export interface LoginCodeResponse {
+  id: string;
+}
+
+export interface JoinClassPayload {
+  classId: string;
+}
+
+export interface JoinClassResponse {
+  id: string;
 }
