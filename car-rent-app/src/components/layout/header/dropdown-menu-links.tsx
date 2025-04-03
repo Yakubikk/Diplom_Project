@@ -18,7 +18,7 @@ const menuItems: MenuItem[] = [
     },
     {
         title: 'Забронировать',
-        href: '/',
+        href: '/booking',
     },
     {
         title: 'Автомобили',
