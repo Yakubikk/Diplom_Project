@@ -1,18 +1,16 @@
 'use client';
 
 import React from "react";
-import {IconButton, Stack} from "@mui/material";
-import {IconUser} from "@tabler/icons-react";
+import {Stack} from "@mui/material";
 import {useSidebar} from "@/store";
 import './toggle.scss';
+import {LogoutButton} from "@/components";
 
 const SidebarToggle: React.FC = () => {
     const { toggle } = useSidebar();
     return (
         <Stack direction='row' height='100%' alignItems='center'>
-            <IconButton size='large'>
-                <IconUser />
-            </IconButton>
+            <LogoutButton />
             <div className="parent" onClick={toggle}>
                 <div className="button">
                     <div className="button__horizontal" />

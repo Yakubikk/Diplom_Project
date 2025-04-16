@@ -9,6 +9,7 @@ import { TextField } from '@/components/inputs/text-field';
 import { cn } from '@/lib/utils';
 import { type LoginPayload } from '@/types';
 import { onSubmitForm } from './login-form.helper';
+import { useRouter } from 'next/navigation';
 
 export interface LoginFormValues {
     email: string;
@@ -20,6 +21,8 @@ const LoginForm: React.FC = () => {
     const ta = useTranslations('Authentication');
     const tf = useTranslations('Form');
     const tl = useTranslations('LoginForm');
+
+    const router = useRouter();
 
     const methods = useForm<LoginFormValues>({
         criteriaMode: 'all',
@@ -42,6 +45,7 @@ const LoginForm: React.FC = () => {
         if (response) {
             toast.success(tl('success'));
             console.log(response);
+            router.replace('/');
         } else {
             toast.error(tl('failure'));
         }

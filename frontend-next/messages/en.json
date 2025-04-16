@@ -94,7 +94,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, ru {\uD83C\uDDF7\uD83C\uDDFA} en {\uD83C\uDDEC\uD83C\uDDE7} be {\uD83C\uDDE7\uD83C\uDDFE} other {Неизвестно}}"
+    "locale": "{locale, select, ru {🇷🇺} en {🇬🇧} be {🇧🇾} zh {🇨🇳} other {Неизвестно}}"
   },
   "Authentication": {
     "registration": "Registration",
@@ -124,6 +124,12 @@
   },
   "LoginCodeForm": {
     "description": "A confirmation code has been sent to number {phone}",
+    "resendCode": {
+      "one": "Send code again in {seconds} second",
+      "few": "Send code again in {seconds} seconds",
+      "many": "Send code again in {seconds} seconds"
+    },
+    "resendButton": "Resend code",
     "error": "Code must be entered in full",
     "submit": "Confirm"
   },

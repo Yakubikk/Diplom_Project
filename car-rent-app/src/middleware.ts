@@ -1,0 +1,55 @@
+// middleware.ts
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import axios from "axios";
+
+export async function middleware(request: NextRequest) {
+    // Пути, которые не требуют аутентификации
+    const publicPaths = ['/login', '/register'];
+    if (publicPaths.includes(request.nextUrl.pathname)) {
+        return NextResponse.next();
+    }
+
+    // Получаем accessToken из cookies (или localStorage, но в middleware доступны только cookies)
+    const accessToken = request.cookies.get('accessToken')?.value;
+
+    // Если токена нет, перенаправляем на страницу входа
+    if (!accessToken) {
+        return NextResponse.redirect(new URL('/login', request.url));
+    }
+
+    try {
+        // Проверяем валидность токена через ваш API
+        const response = await axios.get('http://localhost:5174/user/check', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+            },
+        });
+
+        // Если токен невалиден, перенаправляем на страницу входа
+        if (response.status !== 200) {
+            new Error('Invalid token');
+        }
+
+        // Если всё ок, пропускаем запрос дальше
+        return NextResponse.next();
+    } catch (error) {
+        // Удаляем невалидный токен из cookies
+        console.error(error);
+        const response = NextResponse.redirect(new URL('/login', request.url));
+        response.cookies.delete('accessToken');
+        return response;
+    }
+}
+
+// Конфигурация middleware - применяем только к определённым путям
+export const config = {
+    matcher: [
+        /*
+         * Исключаем:
+         * - API-роуты (/_next/static, /_next/image, /favicon.ico, etc.)
+         * - Публичные файлы (images, fonts, etc.)
+         */
+        '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    ],
+};

@@ -1,0 +1,147 @@
+{
+    "Loading": {
+        "loading": "加载中，请稍候..."
+    },
+    "Class": {
+        "navbar": {
+            "feed": "动态",
+            "tasks": "任务",
+            "users": "用户"
+        },
+        "subject": "科目",
+        "meet": "会议",
+        "join": "加入",
+        "copyLink": "复制链接",
+        "copiedLink": "视频会议链接已复制。",
+        "upcoming": "即将到来",
+        "noUpcoming": "您下周没有需要提交的任务。",
+        "viewAll": "查看全部"
+    },
+    "TextEditor": {
+        "refer": "参考课程",
+        "cancel": "取消",
+        "publish": "发布",
+        "bold": "加粗",
+        "italics": "斜体",
+        "underlined": "下划线",
+        "list": "项目符号列表",
+        "orderedList": "编号列表",
+        "clearFormatting": "清除格式",
+        "youtube": "添加 YouTube 视频",
+        "file": "上传文件",
+        "link": "添加链接",
+        "heading1": "标题 1",
+        "heading2": "标题 2",
+        "paragraph": "段落",
+        "undo": "撤销 (ctrl + z)",
+        "redo": "重做 (ctrl + y)",
+        "modals": {
+            "youtube": {
+                "enter": "输入视频 URL",
+                "add": "添加",
+                "cancel": "取消",
+                "views": {
+                    "one": "次观看",
+                    "few": "次观看",
+                    "many": "次观看"
+                },
+                "likes": {
+                    "one": "个赞",
+                    "few": "个赞",
+                    "many": "个赞"
+                },
+                "hours": {
+                    "one": "小时",
+                    "few": "小时",
+                    "many": "小时"
+                },
+                "minutes": {
+                    "one": "分钟",
+                    "few": "分钟",
+                    "many": "分钟"
+                }
+            }
+        }
+    },
+    "Header": {
+        "account": {
+            "hello": "你好",
+            "accountManagement": "账户管理"
+        },
+        "calendar": {
+            "today": "今天"
+        },
+        "join": {
+            "join": "加入",
+            "logged": "您已登录账户",
+            "changeAccount": "切换账户",
+            "courseCode": "课程代码",
+            "enterCode": "请输入课程代码（您可以向您的教师获取）。",
+            "howToLogin": "如何使用课程代码登录",
+            "useWithAccess": "使用具有访问权限的账户。",
+            "enterCodeHow": "输入由 5-7 个字母或数字组成的课程代码，不应包含空格或特殊字符。",
+            "cancel": "取消"
+        }
+    },
+    "Sidebar": {
+        "myPsu": "我的 PSU",
+        "mainPage": "主页",
+        "calendar": "日历"
+    },
+    "LocaleSwitcher": {
+        "label": "更改语言",
+        "locale": "{locale, select, ru {🇷🇺} en {🇬🇧} be {🇧🇾} zh {🇨🇳} other {未知}}"
+    },
+    "Authentication": {
+        "registration": "注册",
+        "haveAccount": "您已有账户？",
+        "noAccount": "您没有账户？",
+        "login": "登录",
+        "register": "注册",
+        "rememberMe": "记住我",
+        "loginButton": "登录",
+        "enterCode": "输入代码",
+        "sendCode": "发送代码",
+        "phoneDescription": "验证码将发送到此号码",
+        "registerButton": "注册",
+        "byEmail": "通过电子邮件",
+        "byPhone": "通过手机号"
+    },
+    "Form": {
+        "requiredFieldError": "此字段为必填项",
+        "invalidEmailError": "请输入有效的电子邮件地址",
+        "invalidPhoneError": "请输入有效的电话号码",
+        "emailPlaceholder": "电子邮件",
+        "passwordPlaceholder": "密码",
+        "forgotPassword": "忘记密码？"
+    },
+    "LoginForm": {
+        "success": "登录成功！",
+        "failure": "登录失败，请重试。"
+    },
+    "LoginCodeForm": {
+        "description": "验证码已发送到 {phone}",
+        "resendCode": {
+            "one": "{seconds} 秒后可重新发送代码",
+            "few": "{seconds} 秒后可重新发送代码",
+            "many": "{seconds} 秒后可重新发送代码"
+        },
+        "resendButton": "重新发送代码",
+        "error": "必须完整输入代码",
+        "submit": "确认"
+    },
+    "RegisterForm": {
+        "passwordMismatchError": "密码不匹配",
+        "fullnamePlaceholder": "姓名",
+        "firstnamePlaceholder": "名字",
+        "lastnamePlaceholder": "姓氏",
+        "patronymicPlaceholder": "父名",
+        "confirmPasswordPlaceholder": "确认密码",
+        "isProfessor": "我是教师",
+        "agreeText": "我同意",
+        "agreeLinkText": "使用条款",
+        "agreeContinuation": "和隐私政策",
+        "success": "注册成功！",
+        "failure": "注册失败，请重试。"
+    }
+}
